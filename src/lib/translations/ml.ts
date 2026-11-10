@@ -1,0 +1,97 @@
+// Malayalam (മലയാളം). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const ml: Translations = {
+  'home.title': "ദൃഷ്ടി",
+  'home.subtitle': "കുട്ടികൾക്കുള്ള കണ്ണ് പരിശോധന",
+  'home.startTest': "കണ്ണ് പരിശോധന തുടങ്ങൂ",
+  'home.viewHistory': "പഴയ ഫലങ്ങൾ കാണൂ",
+  'home.description': "നിനക്ക് കണ്ണട വേണോ, നിറങ്ങൾ കാണാൻ ബുദ്ധിമുട്ടുണ്ടോ എന്ന് അറിയാൻ ഒരു ലളിതമായ കണ്ണ് പരിശോധന.",
+
+  'language.title': "നിന്റെ ഭാഷ തിരഞ്ഞെടുക്കൂ",
+
+  'age.title': "നിന്റെ പ്രായം എത്ര?",
+  'age.subtitle': "നിന്റെ പ്രായം തിരഞ്ഞെടുക്കൂ",
+  'age.years': "വയസ്സ്",
+  'age.next': "അടുത്തത്",
+
+  'name.title': "നിന്റെ പേര് എന്താണ്?",
+  'name.subtitle': "ഇത് നിർബന്ധമില്ല",
+  'name.placeholder': "നിന്റെ പേര് എഴുതൂ",
+  'name.skip': "ഒഴിവാക്കൂ",
+  'name.next': "അടുത്തത്",
+
+  'calibrate.title': "സ്ക്രീൻ അളവ് ശരിയാക്കൂ",
+  'calibrate.instruction': "നിന്റെ ആധാർ കാർഡ് സ്ക്രീനിൽ വെച്ച്, പെട്ടിയുടെ വലിപ്പം കാർഡിന് കൃത്യമായി ചേരുന്നതുവരെ മാറ്റൂ.",
+  'calibrate.noCard': "ആധാർ കാർഡ് ഇല്ലേ? ഏതെങ്കിലും സാധാരണ തിരിച്ചറിയൽ കാർഡ് ഉപയോഗിക്കൂ.",
+  'calibrate.done': "കാർഡ് ഒത്തു",
+  'calibrate.tip': "ഇതുവഴി പരിശോധനയിലെ ചിത്രങ്ങൾ ശരിയായ വലിപ്പത്തിൽ കാണിക്കാം.",
+
+  'instructions.title': "ഈ പരിശോധന എങ്ങനെ നടക്കുന്നു",
+  'instructions.step1': "ഫോൺ കൈ നീട്ടിയ അകലത്തിൽ പിടിക്കൂ",
+  'instructions.step2': "കൈകൊണ്ട് ഒരു കണ്ണ് മൂടൂ",
+  'instructions.step3': "സ്ക്രീനിൽ കാണുന്ന ചിഹ്നം ഒത്തുനോക്കൂ",
+  'instructions.step4': "നിന്റെ തിരഞ്ഞെടുപ്പ് ഉറപ്പാക്കൂ",
+  'instructions.ready': "ഞാൻ തയ്യാർ!",
+
+  'acuity.rightEye': "വലത് കണ്ണ്",
+  'acuity.leftEye': "ഇടത് കണ്ണ്",
+  'acuity.coverLeft': "കൈകൊണ്ട് നിന്റെ ഇടത് കണ്ണ് മൂടൂ",
+  'acuity.coverRight': "കൈകൊണ്ട് നിന്റെ വലത് കണ്ണ് മൂടൂ",
+  'acuity.matchSymbol': "താഴെ അതേ ചിഹ്നം തൊടൂ",
+  'acuity.confirm': "നീ ഈ ചിഹ്നം തിരഞ്ഞെടുത്തു. ഇത് ശരിയാണോ?",
+  'acuity.yes': "അതെ ✓",
+  'acuity.no': "അല്ല, വീണ്ടും ശ്രമിക്കട്ടെ",
+  'acuity.switchEye': "വളരെ നല്ലത്! ഇനി മറ്റേ കണ്ണ് പരിശോധിക്കാം.",
+  'acuity.switchInstruction': "കൈകൊണ്ട് നിന്റെ വലത് കണ്ണ് മൂടൂ.",
+  'acuity.continue': "തുടരൂ",
+  'acuity.level': "ഘട്ടം",
+
+  'color.title': "നിറക്കാഴ്ച പരിശോധന",
+  'color.instruction': "വൃത്തത്തിൽ നിനക്ക് ഏത് സംഖ്യയാണ് കാണുന്നത്?",
+  'color.cantSee': "എനിക്ക് ഒരു സംഖ്യയും കാണുന്നില്ല",
+  'color.clear': "മായ്ക്കൂ",
+  'color.progress': "{total}-ൽ {current}",
+
+  'results.title': "നിന്റെ ഫലങ്ങൾ",
+  'results.rightEye': "വലത് കണ്ണ്",
+  'results.leftEye': "ഇടത് കണ്ണ്",
+  'results.colorVision': "നിറക്കാഴ്ച",
+  'results.passed': "നിന്റെ കാഴ്ച ആരോഗ്യകരമാണെന്ന് തോന്നുന്നു!",
+  'results.failed': "ഒരു കണ്ണ് ഡോക്ടറെ കാണാൻ ഞങ്ങൾ നിർദ്ദേശിക്കുന്നു.",
+  'results.colorPassed': "നിന്റെ നിറക്കാഴ്ച സാധാരണമാണെന്ന് തോന്നുന്നു!",
+  'results.colorFailed': "ചില നിറങ്ങൾ കാണാൻ നിനക്ക് ബുദ്ധിമുട്ട് ഉണ്ടാകാം. ദയവായി ഒരു കണ്ണ് ഡോക്ടറെ കാണൂ.",
+  'results.newTest': "വീണ്ടും പരിശോധിക്കൂ",
+  'results.home': "ആദ്യ പേജിലേക്ക് പോകൂ",
+  'results.normal': "സാധാരണം",
+  'results.needsCheck': "പരിശോധന ആവശ്യം",
+  'results.dateSaved': "ഫലം സൂക്ഷിച്ചു",
+
+  'history.title': "പഴയ ഫലങ്ങൾ",
+  'history.noResults': "പഴയ ഫലങ്ങൾ ഒന്നുമില്ല.",
+  'history.clear': "എല്ലാം മായ്ക്കൂ",
+  'history.takeTest': "പരിശോധന നടത്തൂ",
+  'history.deleteOne': "ഈ ഫലം മായ്ക്കൂ",
+  'history.clearTitle': "എല്ലാ ഫലങ്ങളും മായ്ക്കണോ?",
+  'history.cannotUndo': "ഇത് തിരികെ എടുക്കാൻ കഴിയില്ല.",
+  'history.summary': "{saved} സൂക്ഷിച്ചു · {checkup} പേർക്ക് പരിശോധന ആവശ്യം",
+  'history.age': "പ്രായം: {age} വയസ്സ്",
+  'history.color': "നിറം",
+  'history.check': "പരിശോധന",
+  'history.exportCSV': "എക്സൽ (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "ഇത് ഒരു സ്ക്രീനിംഗ് ഉപകരണം മാത്രമാണ്, രോഗനിർണയ ഉപകരണമല്ല. ശരിയായ രോഗനിർണയത്തിന് ഒരു നേത്രരോഗ വിദഗ്ധനെ സമീപിക്കുക.",
+  'disclaimer.results': "ഇത് ഒരു സ്ക്രീനിംഗ് മാത്രമാണ്, വൈദ്യ രോഗനിർണയമല്ല. സമഗ്രമായ പരിശോധനയ്ക്ക് യോഗ്യനായ ഒരു നേത്രരോഗ വിദഗ്ധനെ കാണുക.",
+  'instructions.armTip': "ഫോൺ കൈ നീട്ടിയ അകലത്തിൽ പിടിക്കൂ (~{cm} സെ.മീ.)",
+  'calibrate.cardLabel': "ആധാർ കാർഡ്",
+  'calibrate.smaller': "ചെറുത്",
+  'calibrate.bigger': "വലുത്",
+
+  'common.back': "തിരികെ",
+  'common.cancel': "റദ്ദാക്കൂ",
+  'common.ok': "ശരി",
+  'common.loading': "ലോഡ് ചെയ്യുന്നു...",
+};
+
+export default ml;

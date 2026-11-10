@@ -1,0 +1,97 @@
+// Bengali (বাংলা). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const bn: Translations = {
+  'home.title': "দৃষ্টি",
+  'home.subtitle': "শিশুদের জন্য চোখ পরীক্ষা",
+  'home.startTest': "চোখ পরীক্ষা শুরু করো",
+  'home.viewHistory': "আগের ফলাফল দেখো",
+  'home.description': "একটি সহজ চোখ পরীক্ষা, যাতে জানা যায় তোমার চশমা লাগবে কিনা বা রং দেখতে অসুবিধা আছে কিনা।",
+
+  'language.title': "তোমার ভাষা বেছে নাও",
+
+  'age.title': "তোমার বয়স কত?",
+  'age.subtitle': "তোমার বয়স বেছে নাও",
+  'age.years': "বছর",
+  'age.next': "পরবর্তী",
+
+  'name.title': "তোমার নাম কী?",
+  'name.subtitle': "এটা না দিলেও চলবে",
+  'name.placeholder': "তোমার নাম লেখো",
+  'name.skip': "বাদ দাও",
+  'name.next': "পরবর্তী",
+
+  'calibrate.title': "স্ক্রিন মাপ ঠিক করো",
+  'calibrate.instruction': "তোমার আধার কার্ড স্ক্রিনের উপর রাখো এবং বাক্সটি ছোট-বড় করে কার্ডের সমান মাপে আনো।",
+  'calibrate.noCard': "আধার কার্ড নেই? যেকোনো সাধারণ পরিচয়পত্র ব্যবহার করো।",
+  'calibrate.done': "কার্ডের মাপ মিলেছে",
+  'calibrate.tip': "এতে পরীক্ষার ছবিগুলো সঠিক মাপে দেখানো যায়।",
+
+  'instructions.title': "পরীক্ষাটি কীভাবে হয়",
+  'instructions.step1': "ফোনটি হাত সোজা করে দূরে ধরো",
+  'instructions.step2': "এক হাত দিয়ে একটি চোখ ঢাকো",
+  'instructions.step3': "স্ক্রিনে দেখানো ছবির সাথে মেলাও",
+  'instructions.step4': "তোমার উত্তর নিশ্চিত করো",
+  'instructions.ready': "আমি তৈরি!",
+
+  'acuity.rightEye': "ডান চোখ",
+  'acuity.leftEye': "বাঁ চোখ",
+  'acuity.coverLeft': "হাত দিয়ে তোমার বাঁ চোখ ঢাকো",
+  'acuity.coverRight': "হাত দিয়ে তোমার ডান চোখ ঢাকো",
+  'acuity.matchSymbol': "নিচে একই রকম ছবিতে চাপ দাও",
+  'acuity.confirm': "তুমি এই ছবিটি বেছেছ। এটা কি ঠিক?",
+  'acuity.yes': "হ্যাঁ ✓",
+  'acuity.no': "না, আবার চেষ্টা করি",
+  'acuity.switchEye': "খুব ভালো! এবার অন্য চোখটি পরীক্ষা করি।",
+  'acuity.switchInstruction': "হাত দিয়ে তোমার ডান চোখ ঢাকো।",
+  'acuity.continue': "চালিয়ে যাও",
+  'acuity.level': "ধাপ",
+
+  'color.title': "রং দেখার পরীক্ষা",
+  'color.instruction': "বৃত্তের মধ্যে তুমি কোন সংখ্যা দেখতে পাচ্ছ?",
+  'color.cantSee': "আমি কোনো সংখ্যা দেখতে পাচ্ছি না",
+  'color.clear': "মুছে ফেলো",
+  'color.progress': "{total}-এর মধ্যে {current}",
+
+  'results.title': "তোমার ফলাফল",
+  'results.rightEye': "ডান চোখ",
+  'results.leftEye': "বাঁ চোখ",
+  'results.colorVision': "রং দেখা",
+  'results.passed': "তোমার চোখ ভালো আছে বলে মনে হচ্ছে!",
+  'results.failed': "একবার চোখের ডাক্তার দেখানোর পরামর্শ দিচ্ছি।",
+  'results.colorPassed': "তোমার রং দেখা স্বাভাবিক মনে হচ্ছে!",
+  'results.colorFailed': "কিছু রং দেখতে তোমার অসুবিধা হতে পারে। দয়া করে চোখের ডাক্তার দেখাও।",
+  'results.newTest': "আবার পরীক্ষা করো",
+  'results.home': "শুরুর পাতায় যাও",
+  'results.normal': "স্বাভাবিক",
+  'results.needsCheck': "পরীক্ষা দরকার",
+  'results.dateSaved': "ফলাফল সংরক্ষিত হয়েছে",
+
+  'history.title': "আগের ফলাফল",
+  'history.noResults': "আগের কোনো ফলাফল পাওয়া যায়নি।",
+  'history.clear': "সব মুছে ফেলো",
+  'history.takeTest': "পরীক্ষা দাও",
+  'history.deleteOne': "এই ফলাফল মুছে ফেলো",
+  'history.clearTitle': "সব ফলাফল মুছে ফেলবে?",
+  'history.cannotUndo': "এটা আর ফেরানো যাবে না।",
+  'history.summary': "{saved}টি সংরক্ষিত · {checkup}টির পরীক্ষা দরকার",
+  'history.age': "বয়স: {age} বছর",
+  'history.color': "রং",
+  'history.check': "পরীক্ষা",
+  'history.exportCSV': "এক্সেল (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "এটি শুধু একটি স্ক্রিনিং টুল, রোগ নির্ণয়ের যন্ত্র নয়। সঠিক নির্ণয়ের জন্য চোখের বিশেষজ্ঞের পরামর্শ নাও।",
+  'disclaimer.results': "এটি শুধু একটি স্ক্রিনিং, চিকিৎসাগত রোগ নির্ণয় নয়। পূর্ণ পরীক্ষার জন্য একজন যোগ্য চোখের বিশেষজ্ঞের কাছে যাও।",
+  'instructions.armTip': "ফোনটি হাত সোজা করে দূরে ধরো (~{cm} সেমি)",
+  'calibrate.cardLabel': "আধার কার্ড",
+  'calibrate.smaller': "ছোট",
+  'calibrate.bigger': "বড়",
+
+  'common.back': "পিছনে",
+  'common.cancel': "বাতিল",
+  'common.ok': "ঠিক আছে",
+  'common.loading': "লোড হচ্ছে...",
+};
+
+export default bn;

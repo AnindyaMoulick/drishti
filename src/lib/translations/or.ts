@@ -1,0 +1,97 @@
+// Odia (ଓଡ଼ିଆ). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const or: Translations = {
+  'home.title': "ଦୃଷ୍ଟି",
+  'home.subtitle': "ପିଲାମାନଙ୍କ ପାଇଁ ଆଖି ପରୀକ୍ଷା",
+  'home.startTest': "ଆଖି ପରୀକ୍ଷା ଆରମ୍ଭ କର",
+  'home.viewHistory': "ପୁରୁଣା ଫଳାଫଳ ଦେଖ",
+  'home.description': "ତୁମକୁ ଚଷମା ଦରକାର କି ନାହିଁ ବା ରଙ୍ଗ ଚିହ୍ନିବାରେ ଅସୁବିଧା ଅଛି କି ନାହିଁ ଜାଣିବା ପାଇଁ ଏକ ସହଜ ଆଖି ପରୀକ୍ଷା।",
+
+  'language.title': "ତୁମର ଭାଷା ବାଛ",
+
+  'age.title': "ତୁମର ବୟସ କେତେ?",
+  'age.subtitle': "ତୁମର ବୟସ ବାଛ",
+  'age.years': "ବର୍ଷ",
+  'age.next': "ଆଗକୁ",
+
+  'name.title': "ତୁମର ନାମ କଣ?",
+  'name.subtitle': "ଏହା ବାଧ୍ୟତାମୂଳକ ନୁହେଁ",
+  'name.placeholder': "ତୁମର ନାମ ଲେଖ",
+  'name.skip': "ଛାଡ଼ିଦିଅ",
+  'name.next': "ଆଗକୁ",
+
+  'calibrate.title': "ସ୍କ୍ରିନ୍ ମାପ ଠିକ୍ କର",
+  'calibrate.instruction': "ତୁମର ଆଧାର କାର୍ଡ ସ୍କ୍ରିନ୍ ଉପରେ ରଖ ଏବଂ ବାକ୍ସର ଆକାର କାର୍ଡ ସହିତ ଠିକ୍ ମେଳ କର।",
+  'calibrate.noCard': "ଆଧାର କାର୍ଡ ନାହିଁ? ଯେକୌଣସି ସାଧାରଣ ପରିଚୟ ପତ୍ର ବ୍ୟବହାର କର।",
+  'calibrate.done': "କାର୍ଡ ମେଳ ହେଲା",
+  'calibrate.tip': "ଏହା ଦ୍ୱାରା ପରୀକ୍ଷାର ଛବିଗୁଡ଼ିକ ଠିକ୍ ଆକାରରେ ଦେଖାଯାଏ।",
+
+  'instructions.title': "ଏହି ପରୀକ୍ଷା କିପରି ହୁଏ",
+  'instructions.step1': "ଫୋନକୁ ହାତ ଲମ୍ବା କରି ଧର",
+  'instructions.step2': "ହାତରେ ଗୋଟିଏ ଆଖି ଘୋଡ଼ାଅ",
+  'instructions.step3': "ସ୍କ୍ରିନରେ ଦେଖାଯାଉଥିବା ଚିହ୍ନ ମେଳାଅ",
+  'instructions.step4': "ତୁମର ପସନ୍ଦ ନିଶ୍ଚିତ କର",
+  'instructions.ready': "ମୁଁ ପ୍ରସ୍ତୁତ!",
+
+  'acuity.rightEye': "ଡାହାଣ ଆଖି",
+  'acuity.leftEye': "ବାମ ଆଖି",
+  'acuity.coverLeft': "ହାତରେ ତୁମର ବାମ ଆଖି ଘୋଡ଼ାଅ",
+  'acuity.coverRight': "ହାତରେ ତୁମର ଡାହାଣ ଆଖି ଘୋଡ଼ାଅ",
+  'acuity.matchSymbol': "ତଳେ ସେହିପରି ଚିହ୍ନ ଦବାଅ",
+  'acuity.confirm': "ତୁମେ ଏହି ଚିହ୍ନ ବାଛିଲ। ଏହା ଠିକ୍ କି?",
+  'acuity.yes': "ହଁ ✓",
+  'acuity.no': "ନା, ପୁଣି ଚେଷ୍ଟା କରିବି",
+  'acuity.switchEye': "ବହୁତ ଭଲ! ଏବେ ଅନ୍ୟ ଆଖିର ପରୀକ୍ଷା କରିବା।",
+  'acuity.switchInstruction': "ହାତରେ ତୁମର ଡାହାଣ ଆଖି ଘୋଡ଼ାଅ।",
+  'acuity.continue': "ଆଗକୁ ବଢ଼",
+  'acuity.level': "ସ୍ତର",
+
+  'color.title': "ରଙ୍ଗ ଦୃଷ୍ଟି ପରୀକ୍ଷା",
+  'color.instruction': "ବୃତ୍ତ ଭିତରେ ତୁମେ କେଉଁ ସଂଖ୍ୟା ଦେଖୁଛ?",
+  'color.cantSee': "ମୁଁ କୌଣସି ସଂଖ୍ୟା ଦେଖିପାରୁନି",
+  'color.clear': "ଲିଭାଅ",
+  'color.progress': "{total} ମଧ୍ୟରୁ {current}",
+
+  'results.title': "ତୁମର ଫଳାଫଳ",
+  'results.rightEye': "ଡାହାଣ ଆଖି",
+  'results.leftEye': "ବାମ ଆଖି",
+  'results.colorVision': "ରଙ୍ଗ ଦୃଷ୍ଟି",
+  'results.passed': "ତୁମର ଦୃଷ୍ଟି ସୁସ୍ଥ ଥିବା ପରି ଲାଗୁଛି!",
+  'results.failed': "ଥରେ ଆଖି ଡାକ୍ତରଙ୍କୁ ଦେଖାଇବାକୁ ପରାମର୍ଶ ଦେଉଛୁ।",
+  'results.colorPassed': "ତୁମର ରଙ୍ଗ ଦୃଷ୍ଟି ସାଧାରଣ ଥିବା ପରି ଲାଗୁଛି!",
+  'results.colorFailed': "କିଛି ରଙ୍ଗ ଦେଖିବାରେ ତୁମକୁ ଅସୁବିଧା ହୋଇପାରେ। ଦୟାକରି ଆଖି ଡାକ୍ତରଙ୍କୁ ଦେଖାଅ।",
+  'results.newTest': "ପୁଣି ପରୀକ୍ଷା କର",
+  'results.home': "ମୂଳ ପୃଷ୍ଠାକୁ ଯାଅ",
+  'results.normal': "ସାଧାରଣ",
+  'results.needsCheck': "ପରୀକ୍ଷା ଦରକାର",
+  'results.dateSaved': "ଫଳାଫଳ ସଞ୍ଚିତ ହେଲା",
+
+  'history.title': "ପୁରୁଣା ଫଳାଫଳ",
+  'history.noResults': "କୌଣସି ପୁରୁଣା ଫଳାଫଳ ମିଳିଲା ନାହିଁ।",
+  'history.clear': "ସବୁ ଲିଭାଅ",
+  'history.takeTest': "ପରୀକ୍ଷା ଦିଅ",
+  'history.deleteOne': "ଏହି ଫଳାଫଳ ଲିଭାଅ",
+  'history.clearTitle': "ସବୁ ଫଳାଫଳ ଲିଭାଇବ?",
+  'history.cannotUndo': "ଏହାକୁ ଫେରାଇ ହେବ ନାହିଁ।",
+  'history.summary': "{saved}ଟି ସଞ୍ଚିତ · {checkup}ଟିକୁ ପରୀକ୍ଷା ଦରକାର",
+  'history.age': "ବୟସ: {age} ବର୍ଷ",
+  'history.color': "ରଙ୍ଗ",
+  'history.check': "ପରୀକ୍ଷା",
+  'history.exportCSV': "ଏକ୍ସେଲ୍ (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "ଏହା କେବଳ ଏକ ସ୍କ୍ରିନିଂ ଉପକରଣ, ରୋଗ ନିର୍ଣ୍ଣୟ ଯନ୍ତ୍ର ନୁହେଁ। ଠିକ୍ ନିର୍ଣ୍ଣୟ ପାଇଁ ଆଖି ବିଶେଷଜ୍ଞଙ୍କ ପରାମର୍ଶ ନିଅ।",
+  'disclaimer.results': "ଏହା କେବଳ ଏକ ସ୍କ୍ରିନିଂ, ଚିକିତ୍ସା ନିର୍ଣ୍ଣୟ ନୁହେଁ। ସମ୍ପୂର୍ଣ୍ଣ ପରୀକ୍ଷା ପାଇଁ ଜଣେ ଯୋଗ୍ୟ ଆଖି ବିଶେଷଜ୍ଞଙ୍କ ପାଖକୁ ଯାଅ।",
+  'instructions.armTip': "ଫୋନକୁ ହାତ ଲମ୍ବା କରି ଧର (~{cm} ସେମି)",
+  'calibrate.cardLabel': "ଆଧାର କାର୍ଡ",
+  'calibrate.smaller': "ଛୋଟ",
+  'calibrate.bigger': "ବଡ଼",
+
+  'common.back': "ପଛକୁ",
+  'common.cancel': "ବାତିଲ୍",
+  'common.ok': "ଠିକ୍ ଅଛି",
+  'common.loading': "ଲୋଡ୍ ହେଉଛି...",
+};
+
+export default or;

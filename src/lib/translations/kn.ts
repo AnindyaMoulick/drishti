@@ -1,0 +1,97 @@
+// Kannada (ಕನ್ನಡ). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const kn: Translations = {
+  'home.title': "ದೃಷ್ಟಿ",
+  'home.subtitle': "ಮಕ್ಕಳಿಗಾಗಿ ಕಣ್ಣಿನ ಪರೀಕ್ಷೆ",
+  'home.startTest': "ಕಣ್ಣಿನ ಪರೀಕ್ಷೆ ಪ್ರಾರಂಭಿಸು",
+  'home.viewHistory': "ಹಿಂದಿನ ಫಲಿತಾಂಶಗಳನ್ನು ನೋಡು",
+  'home.description': "ನಿನಗೆ ಕನ್ನಡಕ ಬೇಕೇ ಅಥವಾ ಬಣ್ಣ ನೋಡುವುದರಲ್ಲಿ ತೊಂದರೆ ಇದೆಯೇ ಎಂದು ತಿಳಿಯಲು ಒಂದು ಸರಳ ಕಣ್ಣಿನ ಪರೀಕ್ಷೆ.",
+
+  'language.title': "ನಿನ್ನ ಭಾಷೆಯನ್ನು ಆರಿಸು",
+
+  'age.title': "ನಿನ್ನ ವಯಸ್ಸು ಎಷ್ಟು?",
+  'age.subtitle': "ನಿನ್ನ ವಯಸ್ಸನ್ನು ಆರಿಸು",
+  'age.years': "ವರ್ಷ",
+  'age.next': "ಮುಂದೆ",
+
+  'name.title': "ನಿನ್ನ ಹೆಸರೇನು?",
+  'name.subtitle': "ಇದು ಕಡ್ಡಾಯವಲ್ಲ",
+  'name.placeholder': "ನಿನ್ನ ಹೆಸರು ಬರೆ",
+  'name.skip': "ಬಿಟ್ಟುಬಿಡು",
+  'name.next': "ಮುಂದೆ",
+
+  'calibrate.title': "ಪರದೆಯ ಅಳತೆ ಸರಿಪಡಿಸು",
+  'calibrate.instruction': "ನಿನ್ನ ಆಧಾರ್ ಕಾರ್ಡನ್ನು ಪರದೆಯ ಮೇಲೆ ಇಟ್ಟು, ಪೆಟ್ಟಿಗೆಯ ಗಾತ್ರವನ್ನು ಕಾರ್ಡಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಿಸು.",
+  'calibrate.noCard': "ಆಧಾರ್ ಕಾರ್ಡ್ ಇಲ್ಲವೇ? ಯಾವುದಾದರೂ ಸಾಮಾನ್ಯ ಗುರುತಿನ ಚೀಟಿ ಬಳಸು.",
+  'calibrate.done': "ಕಾರ್ಡ್ ಹೊಂದಿಕೆಯಾಯಿತು",
+  'calibrate.tip': "ಇದರಿಂದ ಪರೀಕ್ಷೆಯ ಚಿತ್ರಗಳು ಸರಿಯಾದ ಗಾತ್ರದಲ್ಲಿ ಕಾಣುತ್ತವೆ.",
+
+  'instructions.title': "ಈ ಪರೀಕ್ಷೆ ಹೇಗೆ ನಡೆಯುತ್ತದೆ",
+  'instructions.step1': "ಫೋನನ್ನು ಕೈ ಚಾಚಿದಷ್ಟು ದೂರದಲ್ಲಿ ಹಿಡಿ",
+  'instructions.step2': "ಕೈಯಿಂದ ಒಂದು ಕಣ್ಣು ಮುಚ್ಚು",
+  'instructions.step3': "ಪರದೆಯ ಮೇಲೆ ಕಾಣುವ ಚಿಹ್ನೆಯನ್ನು ಹೊಂದಿಸು",
+  'instructions.step4': "ನಿನ್ನ ಆಯ್ಕೆಯನ್ನು ಖಚಿತಪಡಿಸು",
+  'instructions.ready': "ನಾನು ಸಿದ್ಧ!",
+
+  'acuity.rightEye': "ಬಲಗಣ್ಣು",
+  'acuity.leftEye': "ಎಡಗಣ್ಣು",
+  'acuity.coverLeft': "ಕೈಯಿಂದ ನಿನ್ನ ಎಡಗಣ್ಣು ಮುಚ್ಚು",
+  'acuity.coverRight': "ಕೈಯಿಂದ ನಿನ್ನ ಬಲಗಣ್ಣು ಮುಚ್ಚು",
+  'acuity.matchSymbol': "ಕೆಳಗೆ ಅದೇ ಚಿಹ್ನೆಯನ್ನು ಒತ್ತು",
+  'acuity.confirm': "ನೀನು ಈ ಚಿಹ್ನೆ ಆರಿಸಿದೆ. ಇದು ಸರಿಯೇ?",
+  'acuity.yes': "ಹೌದು ✓",
+  'acuity.no': "ಇಲ್ಲ, ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ",
+  'acuity.switchEye': "ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ! ಈಗ ಇನ್ನೊಂದು ಕಣ್ಣನ್ನು ಪರೀಕ್ಷಿಸೋಣ.",
+  'acuity.switchInstruction': "ಕೈಯಿಂದ ನಿನ್ನ ಬಲಗಣ್ಣು ಮುಚ್ಚು.",
+  'acuity.continue': "ಮುಂದುವರಿಸು",
+  'acuity.level': "ಹಂತ",
+
+  'color.title': "ಬಣ್ಣ ದೃಷ್ಟಿ ಪರೀಕ್ಷೆ",
+  'color.instruction': "ವೃತ್ತದಲ್ಲಿ ನಿನಗೆ ಯಾವ ಸಂಖ್ಯೆ ಕಾಣುತ್ತಿದೆ?",
+  'color.cantSee': "ನನಗೆ ಯಾವ ಸಂಖ್ಯೆಯೂ ಕಾಣುತ್ತಿಲ್ಲ",
+  'color.clear': "ಅಳಿಸು",
+  'color.progress': "{total}ರಲ್ಲಿ {current}",
+
+  'results.title': "ನಿನ್ನ ಫಲಿತಾಂಶಗಳು",
+  'results.rightEye': "ಬಲಗಣ್ಣು",
+  'results.leftEye': "ಎಡಗಣ್ಣು",
+  'results.colorVision': "ಬಣ್ಣ ದೃಷ್ಟಿ",
+  'results.passed': "ನಿನ್ನ ದೃಷ್ಟಿ ಆರೋಗ್ಯವಾಗಿರುವಂತೆ ಕಾಣುತ್ತದೆ!",
+  'results.failed': "ಒಮ್ಮೆ ಕಣ್ಣಿನ ವೈದ್ಯರನ್ನು ಭೇಟಿ ಮಾಡಲು ಸಲಹೆ ನೀಡುತ್ತೇವೆ.",
+  'results.colorPassed': "ನಿನ್ನ ಬಣ್ಣ ದೃಷ್ಟಿ ಸಾಮಾನ್ಯವಾಗಿರುವಂತೆ ಕಾಣುತ್ತದೆ!",
+  'results.colorFailed': "ಕೆಲವು ಬಣ್ಣಗಳನ್ನು ನೋಡಲು ನಿನಗೆ ತೊಂದರೆ ಇರಬಹುದು. ದಯವಿಟ್ಟು ಕಣ್ಣಿನ ವೈದ್ಯರನ್ನು ಭೇಟಿ ಮಾಡು.",
+  'results.newTest': "ಮತ್ತೊಂದು ಪರೀಕ್ಷೆ ಮಾಡು",
+  'results.home': "ಮುಖಪುಟಕ್ಕೆ ಹೋಗು",
+  'results.normal': "ಸಾಮಾನ್ಯ",
+  'results.needsCheck': "ಪರೀಕ್ಷೆ ಅಗತ್ಯ",
+  'results.dateSaved': "ಫಲಿತಾಂಶ ಉಳಿಸಲಾಗಿದೆ",
+
+  'history.title': "ಹಿಂದಿನ ಫಲಿತಾಂಶಗಳು",
+  'history.noResults': "ಹಿಂದಿನ ಯಾವುದೇ ಫಲಿತಾಂಶಗಳಿಲ್ಲ.",
+  'history.clear': "ಎಲ್ಲವನ್ನೂ ಅಳಿಸು",
+  'history.takeTest': "ಪರೀಕ್ಷೆ ಮಾಡು",
+  'history.deleteOne': "ಈ ಫಲಿತಾಂಶ ಅಳಿಸು",
+  'history.clearTitle': "ಎಲ್ಲಾ ಫಲಿತಾಂಶಗಳನ್ನು ಅಳಿಸಬೇಕೇ?",
+  'history.cannotUndo': "ಇದನ್ನು ಹಿಂಪಡೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ.",
+  'history.summary': "{saved} ಉಳಿಸಲಾಗಿದೆ · {checkup} ಮಂದಿಗೆ ಪರೀಕ್ಷೆ ಅಗತ್ಯ",
+  'history.age': "ವಯಸ್ಸು: {age} ವರ್ಷ",
+  'history.color': "ಬಣ್ಣ",
+  'history.check': "ಪರೀಕ್ಷೆ",
+  'history.exportCSV': "ಎಕ್ಸೆಲ್ (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "ಇದು ಕೇವಲ ತಪಾಸಣಾ ಸಾಧನ, ರೋಗನಿರ್ಣಯ ಸಾಧನವಲ್ಲ. ಸರಿಯಾದ ರೋಗನಿರ್ಣಯಕ್ಕಾಗಿ ಕಣ್ಣಿನ ತಜ್ಞರನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+  'disclaimer.results': "ಇದು ಕೇವಲ ತಪಾಸಣೆ, ವೈದ್ಯಕೀಯ ರೋಗನಿರ್ಣಯವಲ್ಲ. ಸಂಪೂರ್ಣ ಪರೀಕ್ಷೆಗಾಗಿ ಅರ್ಹ ಕಣ್ಣಿನ ತಜ್ಞರನ್ನು ಭೇಟಿ ಮಾಡಿ.",
+  'instructions.armTip': "ಫೋನನ್ನು ಕೈ ಚಾಚಿದಷ್ಟು ದೂರದಲ್ಲಿ ಹಿಡಿ (~{cm} ಸೆಂ.ಮೀ.)",
+  'calibrate.cardLabel': "ಆಧಾರ್ ಕಾರ್ಡ್",
+  'calibrate.smaller': "ಚಿಕ್ಕದು",
+  'calibrate.bigger': "ದೊಡ್ಡದು",
+
+  'common.back': "ಹಿಂದೆ",
+  'common.cancel': "ರದ್ದುಮಾಡು",
+  'common.ok': "ಸರಿ",
+  'common.loading': "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+};
+
+export default kn;

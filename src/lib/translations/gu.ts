@@ -1,0 +1,97 @@
+// Gujarati (ગુજરાતી). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const gu: Translations = {
+  'home.title': "દૃષ્ટિ",
+  'home.subtitle': "બાળકો માટે આંખની તપાસ",
+  'home.startTest': "આંખની તપાસ શરૂ કરો",
+  'home.viewHistory': "જૂના પરિણામો જુઓ",
+  'home.description': "તમને ચશ્માની જરૂર છે કે રંગ ઓળખવામાં તકલીફ છે તે જાણવા માટે એક સરળ આંખની તપાસ.",
+
+  'language.title': "તમારી ભાષા પસંદ કરો",
+
+  'age.title': "તમારી ઉંમર કેટલી છે?",
+  'age.subtitle': "તમારી ઉંમર પસંદ કરો",
+  'age.years': "વર્ષ",
+  'age.next': "આગળ",
+
+  'name.title': "તમારું નામ શું છે?",
+  'name.subtitle': "આ ફરજિયાત નથી",
+  'name.placeholder': "તમારું નામ લખો",
+  'name.skip': "છોડો",
+  'name.next': "આગળ",
+
+  'calibrate.title': "સ્ક્રીનનું માપ સેટ કરો",
+  'calibrate.instruction': "તમારું આધાર કાર્ડ સ્ક્રીન પર મૂકો અને ખાનાનું કદ કાર્ડ જેટલું બરાબર કરો.",
+  'calibrate.noCard': "આધાર કાર્ડ નથી? કોઈ પણ સામાન્ય ઓળખપત્ર વાપરો.",
+  'calibrate.done': "કાર્ડ મળી ગયું",
+  'calibrate.tip': "આનાથી તપાસના ચિત્રો સાચા કદમાં દેખાય છે.",
+
+  'instructions.title': "આ તપાસ કેવી રીતે થાય છે",
+  'instructions.step1': "ફોનને હાથ લાંબો કરીને પકડો",
+  'instructions.step2': "હાથથી એક આંખ ઢાંકો",
+  'instructions.step3': "સ્ક્રીન પર દેખાતું ચિહ્ન મેળવો",
+  'instructions.step4': "તમારી પસંદગી પાકી કરો",
+  'instructions.ready': "હું તૈયાર છું!",
+
+  'acuity.rightEye': "જમણી આંખ",
+  'acuity.leftEye': "ડાબી આંખ",
+  'acuity.coverLeft': "હાથથી તમારી ડાબી આંખ ઢાંકો",
+  'acuity.coverRight': "હાથથી તમારી જમણી આંખ ઢાંકો",
+  'acuity.matchSymbol': "નીચે એવું જ ચિહ્ન દબાવો",
+  'acuity.confirm': "તમે આ ચિહ્ન પસંદ કર્યું. શું આ સાચું છે?",
+  'acuity.yes': "હા ✓",
+  'acuity.no': "ના, ફરી પ્રયત્ન કરું",
+  'acuity.switchEye': "ખૂબ સરસ! હવે બીજી આંખની તપાસ કરીએ.",
+  'acuity.switchInstruction': "હાથથી તમારી જમણી આંખ ઢાંકો.",
+  'acuity.continue': "ચાલુ રાખો",
+  'acuity.level': "સ્તર",
+
+  'color.title': "રંગ ઓળખની તપાસ",
+  'color.instruction': "વર્તુળમાં તમને કયો આંકડો દેખાય છે?",
+  'color.cantSee': "મને કોઈ આંકડો દેખાતો નથી",
+  'color.clear': "ભૂંસો",
+  'color.progress': "{total} માંથી {current}",
+
+  'results.title': "તમારા પરિણામો",
+  'results.rightEye': "જમણી આંખ",
+  'results.leftEye': "ડાબી આંખ",
+  'results.colorVision': "રંગ ઓળખ",
+  'results.passed': "તમારી દૃષ્ટિ સ્વસ્થ લાગે છે!",
+  'results.failed': "આંખના ડૉક્ટર પાસે તપાસ કરાવવાની સલાહ આપીએ છીએ.",
+  'results.colorPassed': "તમારી રંગ ઓળખ સામાન્ય લાગે છે!",
+  'results.colorFailed': "તમને અમુક રંગ ઓળખવામાં તકલીફ હોઈ શકે છે. કૃપા કરીને આંખના ડૉક્ટરને મળો.",
+  'results.newTest': "ફરી તપાસ કરો",
+  'results.home': "મુખ્ય પાના પર જાઓ",
+  'results.normal': "સામાન્ય",
+  'results.needsCheck': "તપાસ જરૂરી",
+  'results.dateSaved': "પરિણામ સાચવ્યું",
+
+  'history.title': "જૂના પરિણામો",
+  'history.noResults': "કોઈ જૂના પરિણામ મળ્યા નથી.",
+  'history.clear': "બધું કાઢી નાખો",
+  'history.takeTest': "તપાસ કરો",
+  'history.deleteOne': "આ પરિણામ કાઢી નાખો",
+  'history.clearTitle': "બધા પરિણામ કાઢી નાખવા છે?",
+  'history.cannotUndo': "આ પાછું લાવી શકાશે નહીં.",
+  'history.summary': "{saved} સાચવ્યા · {checkup}ને તપાસની જરૂર",
+  'history.age': "ઉંમર: {age} વર્ષ",
+  'history.color': "રંગ",
+  'history.check': "તપાસ",
+  'history.exportCSV': "એક્સેલ (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "આ ફક્ત પ્રાથમિક તપાસનું સાધન છે, નિદાનનું ઉપકરણ નથી. સાચા નિદાન માટે આંખના નિષ્ણાતની સલાહ લો.",
+  'disclaimer.results': "આ ફક્ત પ્રાથમિક તપાસ છે, તબીબી નિદાન નથી. સંપૂર્ણ તપાસ માટે લાયક આંખના નિષ્ણાતને મળો.",
+  'instructions.armTip': "ફોનને હાથ લાંબો કરીને પકડો (~{cm} સેમી)",
+  'calibrate.cardLabel': "આધાર કાર્ડ",
+  'calibrate.smaller': "નાનું",
+  'calibrate.bigger': "મોટું",
+
+  'common.back': "પાછા",
+  'common.cancel': "રદ કરો",
+  'common.ok': "બરાબર",
+  'common.loading': "લોડ થાય છે...",
+};
+
+export default gu;

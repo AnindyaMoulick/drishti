@@ -1,0 +1,97 @@
+// Nepali (नेपाली). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const ne: Translations = {
+  'home.title': "दृष्टि",
+  'home.subtitle': "बालबालिकाका लागि आँखा जाँच",
+  'home.startTest': "आँखा जाँच सुरु गर",
+  'home.viewHistory': "पुराना नतिजा हेर",
+  'home.description': "तिमीलाई चस्मा चाहिन्छ कि रङ चिन्न गाह्रो छ भनेर थाहा पाउन एउटा सजिलो आँखा जाँच।",
+
+  'language.title': "आफ्नो भाषा छान",
+
+  'age.title': "तिम्रो उमेर कति हो?",
+  'age.subtitle': "आफ्नो उमेर छान",
+  'age.years': "वर्ष",
+  'age.next': "अर्को",
+
+  'name.title': "तिम्रो नाम के हो?",
+  'name.subtitle': "यो अनिवार्य होइन",
+  'name.placeholder': "आफ्नो नाम लेख",
+  'name.skip': "छोड",
+  'name.next': "अर्को",
+
+  'calibrate.title': "स्क्रिनको नाप मिलाऊ",
+  'calibrate.instruction': "आफ्नो आधार कार्ड स्क्रिनमाथि राख र बाकसको आकार कार्डसँग ठ्याक्कै मिलाऊ।",
+  'calibrate.noCard': "आधार कार्ड छैन? कुनै पनि साधारण परिचय पत्र प्रयोग गर।",
+  'calibrate.done': "कार्ड मिल्यो",
+  'calibrate.tip': "यसले जाँचका चित्रहरू सही आकारमा देखाउन मद्दत गर्छ।",
+
+  'instructions.title': "यो जाँच कसरी हुन्छ",
+  'instructions.step1': "फोनलाई हात तन्काएर टाढा समात",
+  'instructions.step2': "हातले एउटा आँखा छोप",
+  'instructions.step3': "स्क्रिनमा देखाइएको चिन्ह मिलाऊ",
+  'instructions.step4': "आफ्नो छनोट पक्का गर",
+  'instructions.ready': "म तयार छु!",
+
+  'acuity.rightEye': "दायाँ आँखा",
+  'acuity.leftEye': "बायाँ आँखा",
+  'acuity.coverLeft': "हातले आफ्नो बायाँ आँखा छोप",
+  'acuity.coverRight': "हातले आफ्नो दायाँ आँखा छोप",
+  'acuity.matchSymbol': "तल उस्तै चिन्ह थिच",
+  'acuity.confirm': "तिमीले यो चिन्ह छान्यौ। के यो सही हो?",
+  'acuity.yes': "हो ✓",
+  'acuity.no': "होइन, फेरि प्रयास गर्छु",
+  'acuity.switchEye': "धेरै राम्रो! अब अर्को आँखा जाँचौं।",
+  'acuity.switchInstruction': "हातले आफ्नो दायाँ आँखा छोप।",
+  'acuity.continue': "जारी राख",
+  'acuity.level': "तह",
+
+  'color.title': "रङ पहिचान जाँच",
+  'color.instruction': "गोलाभित्र तिमीले कुन अङ्क देख्यौ?",
+  'color.cantSee': "मैले कुनै अङ्क देखिनँ",
+  'color.clear': "मेटाऊ",
+  'color.progress': "{total} मध्ये {current}",
+
+  'results.title': "तिम्रा नतिजा",
+  'results.rightEye': "दायाँ आँखा",
+  'results.leftEye': "बायाँ आँखा",
+  'results.colorVision': "रङ पहिचान",
+  'results.passed': "तिम्रो दृष्टि स्वस्थ देखिन्छ!",
+  'results.failed': "एकपटक आँखाको डाक्टरलाई देखाउन सल्लाह दिन्छौं।",
+  'results.colorPassed': "तिम्रो रङ पहिचान सामान्य देखिन्छ!",
+  'results.colorFailed': "तिमीलाई केही रङ हेर्न गाह्रो हुन सक्छ। कृपया आँखाको डाक्टरलाई भेट।",
+  'results.newTest': "फेरि जाँच गर",
+  'results.home': "मुख्य पृष्ठमा जाऊ",
+  'results.normal': "सामान्य",
+  'results.needsCheck': "जाँच आवश्यक",
+  'results.dateSaved': "नतिजा सुरक्षित भयो",
+
+  'history.title': "पुराना नतिजा",
+  'history.noResults': "कुनै पुराना नतिजा भेटिएन।",
+  'history.clear': "सबै मेटाऊ",
+  'history.takeTest': "जाँच गर",
+  'history.deleteOne': "यो नतिजा मेटाऊ",
+  'history.clearTitle': "सबै नतिजा मेटाउने?",
+  'history.cannotUndo': "यसलाई फिर्ता ल्याउन सकिँदैन।",
+  'history.summary': "{saved} सुरक्षित · {checkup} लाई जाँच आवश्यक",
+  'history.age': "उमेर: {age} वर्ष",
+  'history.color': "रङ",
+  'history.check': "जाँच",
+  'history.exportCSV': "एक्सेल (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "यो केवल जाँच गर्ने साधन हो, रोग निदान गर्ने उपकरण होइन। सही निदानका लागि आँखा विशेषज्ञसँग सल्लाह लिनुहोस्।",
+  'disclaimer.results': "यो केवल प्रारम्भिक जाँच हो, चिकित्सकीय निदान होइन। पूर्ण जाँचका लागि योग्य आँखा विशेषज्ञलाई भेट्नुहोस्।",
+  'instructions.armTip': "फोनलाई हात तन्काएर टाढा समात (~{cm} से.मि.)",
+  'calibrate.cardLabel': "आधार कार्ड",
+  'calibrate.smaller': "सानो",
+  'calibrate.bigger': "ठूलो",
+
+  'common.back': "पछाडि",
+  'common.cancel': "रद्द गर",
+  'common.ok': "ठिक छ",
+  'common.loading': "लोड हुँदैछ...",
+};
+
+export default ne;

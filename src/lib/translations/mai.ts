@@ -1,0 +1,97 @@
+// Maithili (मैथिली). AI-drafted, lower confidence: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const mai: Translations = {
+  'home.title': "दृष्टि",
+  'home.subtitle': "बच्चा सभक लेल आँखिक जाँच",
+  'home.startTest': "आँखिक जाँच शुरू करू",
+  'home.viewHistory': "पहिलुका परिणाम देखू",
+  'home.description': "अहाँकेँ चश्मा चाही वा रंग चिन्हबामे दिक्कत अछि, से जानबाक लेल एकटा सहज आँखिक जाँच।",
+
+  'language.title': "अपन भाषा चुनू",
+
+  'age.title': "अहाँक उमेर कतेक अछि?",
+  'age.subtitle': "अपन उमेर चुनू",
+  'age.years': "बरख",
+  'age.next': "आगाँ",
+
+  'name.title': "अहाँक नाम की अछि?",
+  'name.subtitle': "ई जरूरी नहि अछि",
+  'name.placeholder': "अपन नाम लिखू",
+  'name.skip': "छोड़ू",
+  'name.next': "आगाँ",
+
+  'calibrate.title': "स्क्रीनक नाप मिलाउ",
+  'calibrate.instruction': "अपन आधार कार्ड स्क्रीन पर राखू आ डिब्बाक आकार कार्डक ठीक बराबर करू।",
+  'calibrate.noCard': "आधार कार्ड नहि अछि? कोनो साधारण पहिचान पत्र लगाउ।",
+  'calibrate.done': "कार्ड मिलि गेल",
+  'calibrate.tip': "एहिसँ जाँचक चित्र सही आकारमे देखाइत अछि।",
+
+  'instructions.title': "ई जाँच कोना होइत अछि",
+  'instructions.step1': "फोनकेँ हाथ पसारि कऽ दूर पकड़ू",
+  'instructions.step2': "हाथसँ एकटा आँखि झाँपू",
+  'instructions.step3': "स्क्रीन पर देखाओल चिन्ह मिलाउ",
+  'instructions.step4': "अपन चुनाव पक्का करू",
+  'instructions.ready': "हम तैयार छी!",
+
+  'acuity.rightEye': "दहिना आँखि",
+  'acuity.leftEye': "बामा आँखि",
+  'acuity.coverLeft': "हाथसँ अपन बामा आँखि झाँपू",
+  'acuity.coverRight': "हाथसँ अपन दहिना आँखि झाँपू",
+  'acuity.matchSymbol': "नीचाँ ओहने चिन्ह दबाउ",
+  'acuity.confirm': "अहाँ ई चिन्ह चुनलहुँ। की ई सही अछि?",
+  'acuity.yes': "हँ ✓",
+  'acuity.no': "नहि, फेर कोशिश करब",
+  'acuity.switchEye': "बहुत नीक! आब दोसर आँखिक जाँच करी।",
+  'acuity.switchInstruction': "हाथसँ अपन दहिना आँखि झाँपू।",
+  'acuity.continue': "आगाँ बढ़ू",
+  'acuity.level': "स्तर",
+
+  'color.title': "रंग चिन्हबाक जाँच",
+  'color.instruction': "गोलामे अहाँकेँ कोन अंक देखाइत अछि?",
+  'color.cantSee': "हमरा कोनो अंक नहि देखाइत अछि",
+  'color.clear': "मेटाउ",
+  'color.progress': "{total} मेसँ {current}",
+
+  'results.title': "अहाँक परिणाम",
+  'results.rightEye': "दहिना आँखि",
+  'results.leftEye': "बामा आँखि",
+  'results.colorVision': "रंग चिन्हब",
+  'results.passed': "अहाँक दृष्टि स्वस्थ लगैत अछि!",
+  'results.failed': "आँखिक डाक्टरसँ जाँच करएबाक सलाह दैत छी।",
+  'results.colorPassed': "अहाँक रंग चिन्हब सामान्य लगैत अछि!",
+  'results.colorFailed': "अहाँकेँ किछु रंग देखबामे दिक्कत भऽ सकैत अछि। कृपया आँखिक डाक्टरसँ भेंट करू।",
+  'results.newTest': "फेरसँ जाँच करू",
+  'results.home': "मुख्य पन्ना पर जाउ",
+  'results.normal': "सामान्य",
+  'results.needsCheck': "जाँच जरूरी",
+  'results.dateSaved': "परिणाम सहेजल गेल",
+
+  'history.title': "पहिलुका परिणाम",
+  'history.noResults': "कोनो पहिलुका परिणाम नहि भेटल।",
+  'history.clear': "सभ मेटाउ",
+  'history.takeTest': "जाँच करू",
+  'history.deleteOne': "ई परिणाम मेटाउ",
+  'history.clearTitle': "सभ परिणाम मेटा दी?",
+  'history.cannotUndo': "ई घुरा नहि सकैत छी।",
+  'history.summary': "{saved} सहेजल · {checkup} केँ जाँचक जरूरति",
+  'history.age': "उमेर: {age} बरख",
+  'history.color': "रंग",
+  'history.check': "जाँच",
+  'history.exportCSV': "एक्सेल (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "ई मात्र जाँचक साधन अछि, रोग पहिचानक यंत्र नहि। सही पहिचानक लेल आँखिक विशेषज्ञसँ सलाह लिअ।",
+  'disclaimer.results': "ई मात्र प्रारंभिक जाँच अछि, चिकित्सा निदान नहि। पूरा जाँचक लेल योग्य आँखिक विशेषज्ञ लग जाउ।",
+  'instructions.armTip': "फोनकेँ हाथ पसारि कऽ दूर पकड़ू (~{cm} सेमी)",
+  'calibrate.cardLabel': "आधार कार्ड",
+  'calibrate.smaller': "छोट",
+  'calibrate.bigger': "पैघ",
+
+  'common.back': "पाछाँ",
+  'common.cancel': "रद्द करू",
+  'common.ok': "ठीक अछि",
+  'common.loading': "लोड भऽ रहल अछि...",
+};
+
+export default mai;

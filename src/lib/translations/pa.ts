@@ -1,0 +1,97 @@
+// Punjabi (ਪੰਜਾਬੀ, Gurmukhi). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const pa: Translations = {
+  'home.title': "ਦ੍ਰਿਸ਼ਟੀ",
+  'home.subtitle': "ਬੱਚਿਆਂ ਲਈ ਅੱਖਾਂ ਦੀ ਜਾਂਚ",
+  'home.startTest': "ਅੱਖਾਂ ਦੀ ਜਾਂਚ ਸ਼ੁਰੂ ਕਰੋ",
+  'home.viewHistory': "ਪਿਛਲੇ ਨਤੀਜੇ ਵੇਖੋ",
+  'home.description': "ਇਹ ਜਾਣਨ ਲਈ ਇੱਕ ਸੌਖੀ ਅੱਖਾਂ ਦੀ ਜਾਂਚ ਕਿ ਕੀ ਤੁਹਾਨੂੰ ਐਨਕ ਦੀ ਲੋੜ ਹੈ ਜਾਂ ਰੰਗ ਵੇਖਣ ਵਿੱਚ ਮੁਸ਼ਕਲ ਹੈ।",
+
+  'language.title': "ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ",
+
+  'age.title': "ਤੁਹਾਡੀ ਉਮਰ ਕਿੰਨੀ ਹੈ?",
+  'age.subtitle': "ਆਪਣੀ ਉਮਰ ਚੁਣੋ",
+  'age.years': "ਸਾਲ",
+  'age.next': "ਅੱਗੇ",
+
+  'name.title': "ਤੁਹਾਡਾ ਨਾਮ ਕੀ ਹੈ?",
+  'name.subtitle': "ਇਹ ਲਾਜ਼ਮੀ ਨਹੀਂ ਹੈ",
+  'name.placeholder': "ਆਪਣਾ ਨਾਮ ਲਿਖੋ",
+  'name.skip': "ਛੱਡੋ",
+  'name.next': "ਅੱਗੇ",
+
+  'calibrate.title': "ਸਕ੍ਰੀਨ ਦਾ ਮਾਪ ਠੀਕ ਕਰੋ",
+  'calibrate.instruction': "ਆਪਣਾ ਆਧਾਰ ਕਾਰਡ ਸਕ੍ਰੀਨ 'ਤੇ ਰੱਖੋ ਅਤੇ ਡੱਬੇ ਦਾ ਆਕਾਰ ਕਾਰਡ ਦੇ ਬਿਲਕੁਲ ਬਰਾਬਰ ਕਰੋ।",
+  'calibrate.noCard': "ਆਧਾਰ ਕਾਰਡ ਨਹੀਂ ਹੈ? ਕੋਈ ਵੀ ਆਮ ਪਛਾਣ ਪੱਤਰ ਵਰਤੋ।",
+  'calibrate.done': "ਕਾਰਡ ਮਿਲ ਗਿਆ",
+  'calibrate.tip': "ਇਸ ਨਾਲ ਜਾਂਚ ਦੀਆਂ ਤਸਵੀਰਾਂ ਸਹੀ ਆਕਾਰ ਵਿੱਚ ਦਿਖਦੀਆਂ ਹਨ।",
+
+  'instructions.title': "ਇਹ ਜਾਂਚ ਕਿਵੇਂ ਹੁੰਦੀ ਹੈ",
+  'instructions.step1': "ਫ਼ੋਨ ਨੂੰ ਬਾਂਹ ਦੀ ਲੰਬਾਈ 'ਤੇ ਫੜੋ",
+  'instructions.step2': "ਹੱਥ ਨਾਲ ਇੱਕ ਅੱਖ ਢੱਕੋ",
+  'instructions.step3': "ਸਕ੍ਰੀਨ 'ਤੇ ਦਿਖਾਇਆ ਨਿਸ਼ਾਨ ਮਿਲਾਓ",
+  'instructions.step4': "ਆਪਣੀ ਚੋਣ ਪੱਕੀ ਕਰੋ",
+  'instructions.ready': "ਮੈਂ ਤਿਆਰ ਹਾਂ!",
+
+  'acuity.rightEye': "ਸੱਜੀ ਅੱਖ",
+  'acuity.leftEye': "ਖੱਬੀ ਅੱਖ",
+  'acuity.coverLeft': "ਹੱਥ ਨਾਲ ਆਪਣੀ ਖੱਬੀ ਅੱਖ ਢੱਕੋ",
+  'acuity.coverRight': "ਹੱਥ ਨਾਲ ਆਪਣੀ ਸੱਜੀ ਅੱਖ ਢੱਕੋ",
+  'acuity.matchSymbol': "ਹੇਠਾਂ ਉਹੀ ਨਿਸ਼ਾਨ ਦਬਾਓ",
+  'acuity.confirm': "ਤੁਸੀਂ ਇਹ ਨਿਸ਼ਾਨ ਚੁਣਿਆ। ਕੀ ਇਹ ਸਹੀ ਹੈ?",
+  'acuity.yes': "ਹਾਂ ✓",
+  'acuity.no': "ਨਹੀਂ, ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਾਂ",
+  'acuity.switchEye': "ਬਹੁਤ ਵਧੀਆ! ਹੁਣ ਦੂਜੀ ਅੱਖ ਦੀ ਜਾਂਚ ਕਰੀਏ।",
+  'acuity.switchInstruction': "ਹੱਥ ਨਾਲ ਆਪਣੀ ਸੱਜੀ ਅੱਖ ਢੱਕੋ।",
+  'acuity.continue': "ਜਾਰੀ ਰੱਖੋ",
+  'acuity.level': "ਪੱਧਰ",
+
+  'color.title': "ਰੰਗ ਪਛਾਣ ਦੀ ਜਾਂਚ",
+  'color.instruction': "ਗੋਲੇ ਵਿੱਚ ਤੁਹਾਨੂੰ ਕਿਹੜਾ ਨੰਬਰ ਦਿਖਦਾ ਹੈ?",
+  'color.cantSee': "ਮੈਨੂੰ ਕੋਈ ਨੰਬਰ ਨਹੀਂ ਦਿਖਦਾ",
+  'color.clear': "ਮਿਟਾਓ",
+  'color.progress': "{total} ਵਿੱਚੋਂ {current}",
+
+  'results.title': "ਤੁਹਾਡੇ ਨਤੀਜੇ",
+  'results.rightEye': "ਸੱਜੀ ਅੱਖ",
+  'results.leftEye': "ਖੱਬੀ ਅੱਖ",
+  'results.colorVision': "ਰੰਗ ਪਛਾਣ",
+  'results.passed': "ਤੁਹਾਡੀ ਨਜ਼ਰ ਸਿਹਤਮੰਦ ਲੱਗਦੀ ਹੈ!",
+  'results.failed': "ਅਸੀਂ ਅੱਖਾਂ ਦੇ ਡਾਕਟਰ ਤੋਂ ਜਾਂਚ ਕਰਵਾਉਣ ਦੀ ਸਲਾਹ ਦਿੰਦੇ ਹਾਂ।",
+  'results.colorPassed': "ਤੁਹਾਡੀ ਰੰਗ ਪਛਾਣ ਆਮ ਲੱਗਦੀ ਹੈ!",
+  'results.colorFailed': "ਤੁਹਾਨੂੰ ਕੁਝ ਰੰਗ ਵੇਖਣ ਵਿੱਚ ਮੁਸ਼ਕਲ ਹੋ ਸਕਦੀ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਅੱਖਾਂ ਦੇ ਡਾਕਟਰ ਨੂੰ ਮਿਲੋ।",
+  'results.newTest': "ਦੁਬਾਰਾ ਜਾਂਚ ਕਰੋ",
+  'results.home': "ਮੁੱਖ ਪੰਨੇ 'ਤੇ ਜਾਓ",
+  'results.normal': "ਆਮ",
+  'results.needsCheck': "ਜਾਂਚ ਜ਼ਰੂਰੀ",
+  'results.dateSaved': "ਨਤੀਜਾ ਸੰਭਾਲਿਆ ਗਿਆ",
+
+  'history.title': "ਪਿਛਲੇ ਨਤੀਜੇ",
+  'history.noResults': "ਕੋਈ ਪਿਛਲਾ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਿਆ।",
+  'history.clear': "ਸਭ ਮਿਟਾਓ",
+  'history.takeTest': "ਜਾਂਚ ਕਰੋ",
+  'history.deleteOne': "ਇਹ ਨਤੀਜਾ ਮਿਟਾਓ",
+  'history.clearTitle': "ਸਾਰੇ ਨਤੀਜੇ ਮਿਟਾਉਣੇ ਹਨ?",
+  'history.cannotUndo': "ਇਸਨੂੰ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+  'history.summary': "{saved} ਸੰਭਾਲੇ · {checkup} ਨੂੰ ਜਾਂਚ ਦੀ ਲੋੜ",
+  'history.age': "ਉਮਰ: {age} ਸਾਲ",
+  'history.color': "ਰੰਗ",
+  'history.check': "ਜਾਂਚ",
+  'history.exportCSV': "ਐਕਸਲ (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "ਇਹ ਸਿਰਫ਼ ਇੱਕ ਮੁੱਢਲੀ ਜਾਂਚ ਦਾ ਸਾਧਨ ਹੈ, ਬਿਮਾਰੀ ਦੀ ਪਛਾਣ ਦਾ ਯੰਤਰ ਨਹੀਂ। ਸਹੀ ਪਛਾਣ ਲਈ ਅੱਖਾਂ ਦੇ ਮਾਹਰ ਦੀ ਸਲਾਹ ਲਓ।",
+  'disclaimer.results': "ਇਹ ਸਿਰਫ਼ ਇੱਕ ਮੁੱਢਲੀ ਜਾਂਚ ਹੈ, ਡਾਕਟਰੀ ਪਛਾਣ ਨਹੀਂ। ਪੂਰੀ ਜਾਂਚ ਲਈ ਕਿਸੇ ਯੋਗ ਅੱਖਾਂ ਦੇ ਮਾਹਰ ਨੂੰ ਮਿਲੋ।",
+  'instructions.armTip': "ਫ਼ੋਨ ਨੂੰ ਬਾਂਹ ਦੀ ਲੰਬਾਈ 'ਤੇ ਫੜੋ (~{cm} ਸੈ.ਮੀ.)",
+  'calibrate.cardLabel': "ਆਧਾਰ ਕਾਰਡ",
+  'calibrate.smaller': "ਛੋਟਾ",
+  'calibrate.bigger': "ਵੱਡਾ",
+
+  'common.back': "ਵਾਪਸ",
+  'common.cancel': "ਰੱਦ ਕਰੋ",
+  'common.ok': "ਠੀਕ ਹੈ",
+  'common.loading': "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+};
+
+export default pa;

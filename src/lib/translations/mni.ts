@@ -1,0 +1,98 @@
+// Manipuri / Meitei (মৈতৈলোন্, Bengali script). AI-drafted, LOW confidence: must be reviewed by a
+// native speaker before use with children (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const mni: Translations = {
+  'home.title': "দৃষ্টি",
+  'home.subtitle': "অঙাংশিংগী মিৎ চাংয়েং",
+  'home.startTest': "মিৎ চাংয়েং হৌবিয়ু",
+  'home.viewHistory': "মমাংগী মহৈশিং য়েংবিয়ু",
+  'home.description': "নহাক্কী চশমা মথৌ তাবরা নত্ত্রগা মচু খঙদোকপদা অৱাবা লৈব্রা হায়বা খঙনবগী মিৎ চাংয়েং অপিকপা অমা।",
+
+  'language.title': "নহাক্কী লোল খনবিয়ু",
+
+  'age.title': "নহাক্কী চহী কয়া থোক্লে?",
+  'age.subtitle': "নহাক্কী চহী খনবিয়ু",
+  'age.years': "চহী",
+  'age.next': "মথংগী",
+
+  'name.title': "নহাক্কী মমিং করি কৌরিবনো?",
+  'name.subtitle': "মসি তৌদ্রবসু য়াই",
+  'name.placeholder': "নহাক্কী মমিং ইবিয়ু",
+  'name.skip': "থাদোকউ",
+  'name.next': "মথংগী",
+
+  'calibrate.title': "স্ক্রীনগী মচাউ চানবা শেমদোকউ",
+  'calibrate.instruction': "নহাক্কী আধার কার্ড স্ক্রীনগী মথক্তা থম্মু অমসুং বক্সকী মচাউ কার্ডকা চপ মান্নবা ওনবিয়ু।",
+  'calibrate.noCard': "আধার কার্ড লৈতব্রা? মখল খুদিংমগী ID কার্ড অমা শিজিন্নবিয়ু।",
+  'calibrate.done': "কার্ড চানখ্রে",
+  'calibrate.tip': "মসিনা চাংয়েংগী মমিশিং চুম্লবা মচাউদা উৎপা ঙম্মি।",
+
+  'instructions.title': "চাংয়েং অসি করম্না চৎলিবনো",
+  'instructions.step1': "ফোন অদু খুৎ শাংনা থাদোক্লগা পাইবিয়ু",
+  'instructions.step2': "খুৎনা মিৎ অমা উপ্পু",
+  'instructions.step3': "স্ক্রীনদা উৎলিবা খুদম অদু মান্নহনবিয়ু",
+  'instructions.step4': "নহাক্না খনবা অদু চুম্মি হায়না শেমদোকউ",
+  'instructions.ready': "ঐ শেম্লে!",
+
+  'acuity.rightEye': "য়েৎশংগী মিৎ",
+  'acuity.leftEye': "ওইশংগী মিৎ",
+  'acuity.coverLeft': "খুৎনা নহাক্কী ওইশংগী মিৎ উপ্পু",
+  'acuity.coverRight': "খুৎনা নহাক্কী য়েৎশংগী মিৎ উপ্পু",
+  'acuity.matchSymbol': "মখাদা মান্নবা খুদম অদু নম্বিয়ু",
+  'acuity.confirm': "নহাক্না খুদম অসি খনখ্রে। মসি চুম্মিবরা?",
+  'acuity.yes': "হোয় ✓",
+  'acuity.no': "নত্তে, অমুক হন্না হোৎনগে",
+  'acuity.switchEye': "য়াম্না ফৈ! হৌজিক অতোপ্পা মিৎ অদু চাংয়েংসি।",
+  'acuity.switchInstruction': "খুৎনা নহাক্কী য়েৎশংগী মিৎ উপ্পু।",
+  'acuity.continue': "মখা চৎথবিয়ু",
+  'acuity.level': "থাক",
+
+  'color.title': "মচু খঙবগী চাংয়েং",
+  'color.instruction': "চক্রগী মনুংদা নহাক্না মশিং করি উবা ঙম্বগে?",
+  'color.cantSee': "ঐনা মশিং কনানা উবা ঙম্দে",
+  'color.clear': "মুত্থৎলু",
+  'color.progress': "{total} গী মনুংদা {current}",
+
+  'results.title': "নহাক্কী মহৈশিং",
+  'results.rightEye': "য়েৎশংগী মিৎ",
+  'results.leftEye': "ওইশংগী মিৎ",
+  'results.colorVision': "মচু খঙবা",
+  'results.passed': "নহাক্কী মিৎ অফবা ওই হায়না উই!",
+  'results.failed': "মিৎকী ডাক্তর অমদা চাংয়েংনবা পাউতাক পী।",
+  'results.colorPassed': "নহাক্কী মচু খঙবা মতম পুম্নমক্তা চপ মান্নবা ওই!",
+  'results.colorFailed': "নহাক্না মচু খরা খঙবদা অৱাবা লৈবা য়াই। মিৎকী ডাক্তর অমদা চৎপিয়ু।",
+  'results.newTest': "অমুক হন্না চাংয়েংবিয়ু",
+  'results.home': "অহানবা লমায়দা চৎলু",
+  'results.normal': "মতম পুম্নমক্কী",
+  'results.needsCheck': "চাংয়েংবা মথৌ তাই",
+  'results.dateSaved': "মহৈ থম্মি",
+
+  'history.title': "মমাংগী মহৈশিং",
+  'history.noResults': "মমাংগী মহৈ কনানা ফংদ্রে।",
+  'history.clear': "পুম্নমক মুত্থৎলু",
+  'history.takeTest': "চাংয়েংবিয়ু",
+  'history.deleteOne': "মহৈ অসি মুত্থৎলু",
+  'history.clearTitle': "মহৈ পুম্নমক মুত্থৎকদ্রা?",
+  'history.cannotUndo': "মসি হন্দোকপা ঙমলরোই।",
+  'history.summary': "{saved} থম্মি · {checkup} চাংয়েংবা মথৌ তাই",
+  'history.age': "চহী: {age}",
+  'history.color': "মচু",
+  'history.check': "চাংয়েং",
+  'history.exportCSV': "Excel (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "মসি স্ক্রীনিংগী খুৎলাই খক্তনি, অনাবা খঙদোকপগী খুৎলাই নত্তে। চুম্লবা খঙদোকপগীদমক মিৎকী মশিং খঙবা অমদা পাউতাক পুথোকউ।",
+  'disclaimer.results': "মসি স্ক্রীনিং খক্তনি, ডাক্তরগী অনাবা খঙদোকপা নত্তে। মপুং ফানা চাংয়েংনবা মিৎকী মশিং খঙবা অমদা চৎপিয়ু।",
+  'instructions.armTip': "ফোন অদু খুৎ শাংনা থাদোক্লগা পাইবিয়ু (~{cm} cm)",
+  'calibrate.cardLabel': "আধার কার্ড",
+  'calibrate.smaller': "অপিকপা",
+  'calibrate.bigger': "অচৌবা",
+
+  'common.back': "হল্লু",
+  'common.cancel': "কোকথোকউ",
+  'common.ok': "য়াই",
+  'common.loading': "লোড তৌরি...",
+};
+
+export default mni;

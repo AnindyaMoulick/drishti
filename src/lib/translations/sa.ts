@@ -1,0 +1,97 @@
+// Sanskrit (संस्कृतम्). AI-drafted: needs review by a Sanskrit teacher (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const sa: Translations = {
+  'home.title': "दृष्टिः",
+  'home.subtitle': "बालानां कृते नेत्रपरीक्षा",
+  'home.startTest': "नेत्रपरीक्षाम् आरभस्व",
+  'home.viewHistory': "पूर्वपरिणामान् पश्य",
+  'home.description': "उपनेत्रस्य आवश्यकता अस्ति वा, वर्णदर्शने काठिन्यम् अस्ति वा इति ज्ञातुम् एका सरला नेत्रपरीक्षा।",
+
+  'language.title': "स्वभाषां चिनु",
+
+  'age.title': "तव वयः कियत्?",
+  'age.subtitle': "स्ववयः चिनु",
+  'age.years': "वर्षाणि",
+  'age.next': "अग्रे",
+
+  'name.title': "तव नाम किम्?",
+  'name.subtitle': "एतत् ऐच्छिकम्",
+  'name.placeholder': "स्वनाम लिख",
+  'name.skip': "त्यज",
+  'name.next': "अग्रे",
+
+  'calibrate.title': "पटलमानं संयोजय",
+  'calibrate.instruction': "स्वम् आधारपत्रं पटले स्थापय, कोष्ठस्य आकारं पत्रेण समं कुरु।",
+  'calibrate.noCard': "आधारपत्रं नास्ति वा? किमपि सामान्यं परिचयपत्रं उपयुङ्क्ष्व।",
+  'calibrate.done': "पत्रं समम् अभवत्",
+  'calibrate.tip': "अनेन परीक्षायाः चित्राणि उचितपरिमाणे दृश्यन्ते।",
+
+  'instructions.title': "एषा परीक्षा कथं भवति",
+  'instructions.step1': "दूरवाणीं बाहुदूरे धारय",
+  'instructions.step2': "हस्तेन एकं नेत्रम् आच्छादय",
+  'instructions.step3': "पटले दर्शितं चिह्नं मेलय",
+  'instructions.step4': "स्वचयनं निश्चिनु",
+  'instructions.ready': "अहं सज्जः अस्मि!",
+
+  'acuity.rightEye': "दक्षिणनेत्रम्",
+  'acuity.leftEye': "वामनेत्रम्",
+  'acuity.coverLeft': "हस्तेन वामनेत्रम् आच्छादय",
+  'acuity.coverRight': "हस्तेन दक्षिणनेत्रम् आच्छादय",
+  'acuity.matchSymbol': "अधः समानं चिह्नं स्पृश",
+  'acuity.confirm': "त्वया एतत् चिह्नं चितम्। किम् एतत् सम्यक्?",
+  'acuity.yes': "आम् ✓",
+  'acuity.no': "न, पुनः प्रयते",
+  'acuity.switchEye': "उत्तमम्! इदानीम् अपरं नेत्रं परीक्षामहे।",
+  'acuity.switchInstruction': "हस्तेन दक्षिणनेत्रम् आच्छादय।",
+  'acuity.continue': "अनुवर्तस्व",
+  'acuity.level': "स्तरः",
+
+  'color.title': "वर्णदृष्टिपरीक्षा",
+  'color.instruction': "वृत्ते त्वं कां सङ्ख्यां पश्यसि?",
+  'color.cantSee': "अहं कामपि सङ्ख्यां न पश्यामि",
+  'color.clear': "मार्जय",
+  'color.progress': "{total} मध्ये {current}",
+
+  'results.title': "तव परिणामाः",
+  'results.rightEye': "दक्षिणनेत्रम्",
+  'results.leftEye': "वामनेत्रम्",
+  'results.colorVision': "वर्णदृष्टिः",
+  'results.passed': "तव दृष्टिः स्वस्था प्रतीयते!",
+  'results.failed': "नेत्रवैद्यस्य परीक्षां कारयितुं परामर्शं ददामः।",
+  'results.colorPassed': "तव वर्णदृष्टिः सामान्या प्रतीयते!",
+  'results.colorFailed': "केषाञ्चित् वर्णानां दर्शने तव काठिन्यं स्यात्। कृपया नेत्रवैद्यं पश्य।",
+  'results.newTest': "पुनः परीक्षस्व",
+  'results.home': "मुख्यपृष्ठं गच्छ",
+  'results.normal': "सामान्यम्",
+  'results.needsCheck': "परीक्षा आवश्यकी",
+  'results.dateSaved': "परिणामः रक्षितः",
+
+  'history.title': "पूर्वपरिणामाः",
+  'history.noResults': "कोऽपि पूर्वपरिणामः न लब्धः।",
+  'history.clear': "सर्वं मार्जय",
+  'history.takeTest': "परीक्षस्व",
+  'history.deleteOne': "एतं परिणामं मार्जय",
+  'history.clearTitle': "सर्वान् परिणामान् मार्जयसि वा?",
+  'history.cannotUndo': "एतत् पुनः आनेतुं न शक्यते।",
+  'history.summary': "{saved} रक्षिताः · {checkup} परीक्षा आवश्यकी",
+  'history.age': "वयः: {age} वर्षाणि",
+  'history.color': "वर्णः",
+  'history.check': "परीक्षा",
+  'history.exportCSV': "एक्सेल् (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "एतत् केवलं प्रारम्भिकपरीक्षायाः साधनम्, न तु रोगनिदानयन्त्रम्। सम्यक् निदानाय नेत्रविशेषज्ञं पृच्छतु।",
+  'disclaimer.results': "एषा केवलं प्रारम्भिकपरीक्षा, न तु वैद्यकीयनिदानम्। पूर्णपरीक्षायै योग्यं नेत्रविशेषज्ञं पश्यतु।",
+  'instructions.armTip': "दूरवाणीं बाहुदूरे धारय (~{cm} से.मी.)",
+  'calibrate.cardLabel': "आधारपत्रम्",
+  'calibrate.smaller': "लघु",
+  'calibrate.bigger': "बृहत्",
+
+  'common.back': "पृष्ठतः",
+  'common.cancel': "निरस्य",
+  'common.ok': "अस्तु",
+  'common.loading': "आरोप्यते...",
+};
+
+export default sa;

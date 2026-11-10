@@ -1,0 +1,97 @@
+// Assamese (অসমীয়া). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const as: Translations = {
+  'home.title': "দৃষ্টি",
+  'home.subtitle': "শিশুৰ বাবে চকু পৰীক্ষা",
+  'home.startTest': "চকু পৰীক্ষা আৰম্ভ কৰা",
+  'home.viewHistory': "আগৰ ফলাফল চোৱা",
+  'home.description': "তোমাক চছমা লাগে নে নালাগে বা ৰং চিনিবলৈ অসুবিধা আছে নে নাই জানিবলৈ এটা সহজ চকু পৰীক্ষা।",
+
+  'language.title': "তোমাৰ ভাষা বাছি লোৱা",
+
+  'age.title': "তোমাৰ বয়স কিমান?",
+  'age.subtitle': "তোমাৰ বয়স বাছি লোৱা",
+  'age.years': "বছৰ",
+  'age.next': "পৰৱৰ্তী",
+
+  'name.title': "তোমাৰ নাম কি?",
+  'name.subtitle': "এইটো বাধ্যতামূলক নহয়",
+  'name.placeholder': "তোমাৰ নাম লিখা",
+  'name.skip': "এৰি দিয়া",
+  'name.next': "পৰৱৰ্তী",
+
+  'calibrate.title': "স্ক্ৰীণৰ জোখ মিলোৱা",
+  'calibrate.instruction': "তোমাৰ আধাৰ কাৰ্ড স্ক্ৰীণৰ ওপৰত ৰাখা আৰু বাকচটোৰ আকাৰ কাৰ্ডৰ সৈতে ঠিকে মিলোৱা।",
+  'calibrate.noCard': "আধাৰ কাৰ্ড নাই? যিকোনো সাধাৰণ পৰিচয় পত্ৰ ব্যৱহাৰ কৰা।",
+  'calibrate.done': "কাৰ্ড মিলিল",
+  'calibrate.tip': "ইয়াৰ ফলত পৰীক্ষাৰ ছবিবোৰ সঠিক আকাৰত দেখা যায়।",
+
+  'instructions.title': "এই পৰীক্ষা কেনেকৈ হয়",
+  'instructions.step1': "ফোনটো হাত মেলি দূৰত ধৰা",
+  'instructions.step2': "হাতেৰে এটা চকু ঢাকা",
+  'instructions.step3': "স্ক্ৰীণত দেখুওৱা চিহ্নটো মিলোৱা",
+  'instructions.step4': "তোমাৰ বাছনি নিশ্চিত কৰা",
+  'instructions.ready': "মই সাজু!",
+
+  'acuity.rightEye': "সোঁ চকু",
+  'acuity.leftEye': "বাওঁ চকু",
+  'acuity.coverLeft': "হাতেৰে তোমাৰ বাওঁ চকু ঢাকা",
+  'acuity.coverRight': "হাতেৰে তোমাৰ সোঁ চকু ঢাকা",
+  'acuity.matchSymbol': "তলত একে চিহ্নটো টিপা",
+  'acuity.confirm': "তুমি এই চিহ্নটো বাছিলা। এইটো শুদ্ধ নে?",
+  'acuity.yes': "হয় ✓",
+  'acuity.no': "নহয়, আকৌ চেষ্টা কৰোঁ",
+  'acuity.switchEye': "বহুত ভাল! এতিয়া আনটো চকু পৰীক্ষা কৰোঁ।",
+  'acuity.switchInstruction': "হাতেৰে তোমাৰ সোঁ চকু ঢাকা।",
+  'acuity.continue': "আগবাঢ়া",
+  'acuity.level': "স্তৰ",
+
+  'color.title': "ৰং চিনাক্তকৰণ পৰীক্ষা",
+  'color.instruction': "বৃত্তটোৰ ভিতৰত তুমি কোনটো সংখ্যা দেখিছা?",
+  'color.cantSee': "মই কোনো সংখ্যা দেখা নাই",
+  'color.clear': "মচা",
+  'color.progress': "{total}ৰ ভিতৰত {current}",
+
+  'results.title': "তোমাৰ ফলাফল",
+  'results.rightEye': "সোঁ চকু",
+  'results.leftEye': "বাওঁ চকু",
+  'results.colorVision': "ৰং চিনাক্তকৰণ",
+  'results.passed': "তোমাৰ দৃষ্টি সুস্থ যেন লাগিছে!",
+  'results.failed': "এবাৰ চকুৰ চিকিৎসকক দেখুৱাবলৈ পৰামৰ্শ দিওঁ।",
+  'results.colorPassed': "তোমাৰ ৰং চিনাক্তকৰণ স্বাভাৱিক যেন লাগিছে!",
+  'results.colorFailed': "কিছুমান ৰং চিনিবলৈ তোমাৰ অসুবিধা হ'ব পাৰে। অনুগ্ৰহ কৰি চকুৰ চিকিৎসকক দেখুওৱা।",
+  'results.newTest': "আকৌ পৰীক্ষা কৰা",
+  'results.home': "মূল পৃষ্ঠালৈ যোৱা",
+  'results.normal': "স্বাভাৱিক",
+  'results.needsCheck': "পৰীক্ষা প্ৰয়োজন",
+  'results.dateSaved': "ফলাফল সংৰক্ষিত হ'ল",
+
+  'history.title': "আগৰ ফলাফল",
+  'history.noResults': "আগৰ কোনো ফলাফল পোৱা নগ'ল।",
+  'history.clear': "সকলো মচা",
+  'history.takeTest': "পৰীক্ষা দিয়া",
+  'history.deleteOne': "এই ফলাফলটো মচা",
+  'history.clearTitle': "সকলো ফলাফল মচিবা নে?",
+  'history.cannotUndo': "ইয়াক ঘূৰাই আনিব নোৱাৰি।",
+  'history.summary': "{saved}টা সংৰক্ষিত · {checkup}টাৰ পৰীক্ষা প্ৰয়োজন",
+  'history.age': "বয়স: {age} বছৰ",
+  'history.color': "ৰং",
+  'history.check': "পৰীক্ষা",
+  'history.exportCSV': "এক্সেল (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "এইটো কেৱল এটা স্ক্ৰীণিং সঁজুলি, ৰোগ নিৰ্ণয়ৰ যন্ত্ৰ নহয়। সঠিক নিৰ্ণয়ৰ বাবে চকু বিশেষজ্ঞৰ পৰামৰ্শ লোৱা।",
+  'disclaimer.results': "এইটো কেৱল এটা স্ক্ৰীণিং, চিকিৎসাগত ৰোগ নিৰ্ণয় নহয়। সম্পূৰ্ণ পৰীক্ষাৰ বাবে এজন যোগ্য চকু বিশেষজ্ঞৰ ওচৰলৈ যোৱা।",
+  'instructions.armTip': "ফোনটো হাত মেলি দূৰত ধৰা (~{cm} ছেমি)",
+  'calibrate.cardLabel': "আধাৰ কাৰ্ড",
+  'calibrate.smaller': "সৰু",
+  'calibrate.bigger': "ডাঙৰ",
+
+  'common.back': "উভতি যোৱা",
+  'common.cancel': "বাতিল",
+  'common.ok': "ঠিক আছে",
+  'common.loading': "ল'ড হৈ আছে...",
+};
+
+export default as;

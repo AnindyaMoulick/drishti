@@ -235,6 +235,22 @@ async function main() {
     if (histText.includes(s)) problems.push('English left on Hindi history page: ' + s);
   }
 
+  // ---------- Right-to-left (Urdu) and Ol Chiki (Santali) smoke tests ----------
+  for (const [label, expected, rtl] of [['اردو', 'آپ کا نام', true], ['ᱥᱟᱱᱛᱟᱲᱤ', 'ᱧᱩᱛᱩᱢ', false]]) {
+    await send('Page.navigate', { url: BASE + '/' });
+    await waitFor(`document.body.innerText.length > 0`, 'home'); await sleep(2500);
+    // Home is shown in the previously chosen language; the start button is the first button.
+    await evaluate(`document.querySelector('button').click(), true`);
+    await waitPath('/language');
+    await clickText(label);
+    await waitPath('/name');
+    await sleep(300);
+    await screenshot('name-' + (rtl ? 'urdu' : 'santali'));
+    if (!(await bodyText()).includes(expected)) problems.push(`${label}: name page not translated`);
+    const dir = await evaluate('document.documentElement.dir');
+    if (dir !== (rtl ? 'rtl' : 'ltr')) problems.push(`${label}: expected dir=${rtl ? 'rtl' : 'ltr'}, got ${dir}`);
+  }
+
   ws.close();
   chrome.kill();
 }

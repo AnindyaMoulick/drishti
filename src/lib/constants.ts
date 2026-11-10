@@ -16,7 +16,7 @@ export const LANGUAGES: LanguageInfo[] = [
   { code: 'as', name: 'Assamese', nativeName: 'অসমীয়া', script: 'Bengali' },
   { code: 'mai', name: 'Maithili', nativeName: 'मैथिली', script: 'Devanagari' },
   { code: 'sat', name: 'Santali', nativeName: 'ᱥᱟᱱᱛᱟᱲᱤ', script: 'Ol Chiki' },
-  { code: 'ks', name: 'Kashmiri', nativeName: 'कॉशुर', script: 'Devanagari' },
+  { code: 'ks', name: 'Kashmiri', nativeName: 'کٲشُر', script: 'Perso-Arabic' },
   { code: 'ne', name: 'Nepali', nativeName: 'नेपाली', script: 'Devanagari' },
   { code: 'sd', name: 'Sindhi', nativeName: 'سنڌي', script: 'Arabic' },
   { code: 'doi', name: 'Dogri', nativeName: 'डोगरी', script: 'Devanagari' },

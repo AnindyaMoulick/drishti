@@ -48,7 +48,7 @@ export const SPEECH_LANG_MAP: Record<string, string> = {
   doi: 'doi-IN',
   kok: 'kok-IN',
   mni: 'mni-IN',
-  bo: 'bo-IN',
+  bo: 'brx-IN', // Bodo's ISO code is brx ('bo' would select Tibetan)
   sa: 'sa-IN',
 };
 

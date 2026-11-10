@@ -1,0 +1,97 @@
+// Konkani (कोंकणी, Devanagari). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const kok: Translations = {
+  'home.title': "दृष्टी",
+  'home.subtitle': "भुरग्यांखातीर दोळ्यांची तपासणी",
+  'home.startTest': "दोळ्यांची तपासणी सुरू कर",
+  'home.viewHistory': "आदले निकाल पळय",
+  'home.description': "तुका चष्म्याची गरज आसा वा रंग वळखुपाक त्रास जाता काय हें कळपाखातीर एक सोपी दोळ्यांची तपासणी.",
+
+  'language.title': "तुजी भास वेंच",
+
+  'age.title': "तुजें पिराय कितलें?",
+  'age.subtitle': "तुजें पिराय वेंच",
+  'age.years': "वर्सां",
+  'age.next': "फुडें",
+
+  'name.title': "तुजें नांव कितें?",
+  'name.subtitle': "हें गरजेचें ना",
+  'name.placeholder': "तुजें नांव बरय",
+  'name.skip': "सोड",
+  'name.next': "फुडें",
+
+  'calibrate.title': "स्क्रीनाचें माप जुळय",
+  'calibrate.instruction': "तुजें आधार कार्ड स्क्रीनाचेर दवर आनी बॉक्साचो आकार कार्डा इतलोच नीट जुळय.",
+  'calibrate.noCard': "आधार कार्ड ना? खंयचेंय साधें वळखपत्र वापर.",
+  'calibrate.done': "कार्ड जुळ्ळें",
+  'calibrate.tip': "हाका लागून तपासणींतलीं चित्रां योग्य आकारांत दिसतात.",
+
+  'instructions.title': "ही तपासणी कशी जाता",
+  'instructions.step1': "फोन हात लांब करून धर",
+  'instructions.step2': "हातान एक दोळो धांप",
+  'instructions.step3': "स्क्रीनाचेर दाखयल्लें चिन्न जुळय",
+  'instructions.step4': "तुजी वेंचणूक पक्की कर",
+  'instructions.ready': "हांव तयार आसां!",
+
+  'acuity.rightEye': "उजवो दोळो",
+  'acuity.leftEye': "दावो दोळो",
+  'acuity.coverLeft': "हातान तुजो दावो दोळो धांप",
+  'acuity.coverRight': "हातान तुजो उजवो दोळो धांप",
+  'acuity.matchSymbol': "सकयल तेंच चिन्न दाब",
+  'acuity.confirm': "तुवें हें चिन्न वेंचलें. हें बरोबर आसा?",
+  'acuity.yes': "हय ✓",
+  'acuity.no': "ना, परत यत्न करतां",
+  'acuity.switchEye': "बरें! आतां दुसऱ्या दोळ्याची तपासणी करूंया.",
+  'acuity.switchInstruction': "हातान तुजो उजवो दोळो धांप.",
+  'acuity.continue': "फुडें वच",
+  'acuity.level': "पांवडो",
+
+  'color.title': "रंग वळखीची तपासणी",
+  'color.instruction': "वाटकुळांत तुका खंयचो आंकडो दिसता?",
+  'color.cantSee': "म्हाका खंयचोच आंकडो दिसना",
+  'color.clear': "पुस",
+  'color.progress': "{total} भितर {current}",
+
+  'results.title': "तुजे निकाल",
+  'results.rightEye': "उजवो दोळो",
+  'results.leftEye': "दावो दोळो",
+  'results.colorVision': "रंग वळख",
+  'results.passed': "तुजी दृष्टी भलायकेची दिसता!",
+  'results.failed': "दोळ्यांच्या दोतोराकडेन तपासणी करपाची सुचोवणी करतात.",
+  'results.colorPassed': "तुजी रंग वळख सामान्य दिसता!",
+  'results.colorFailed': "तुका कांय रंग पळोवपाक त्रास जावंक शकता. उपकार करून दोळ्यांच्या दोतोराक मेळ.",
+  'results.newTest': "परत तपासणी कर",
+  'results.home': "मुखेल पानार वच",
+  'results.normal': "सामान्य",
+  'results.needsCheck': "तपासणी गरजेची",
+  'results.dateSaved': "निकाल सांबाळ्ळो",
+
+  'history.title': "आदले निकाल",
+  'history.noResults': "खंयचोच आदलो निकाल मेळ्ळो ना.",
+  'history.clear': "सगळें पुस",
+  'history.takeTest': "तपासणी कर",
+  'history.deleteOne': "हो निकाल पुस",
+  'history.clearTitle': "सगळे निकाल पुसपाचे?",
+  'history.cannotUndo': "हें परत हाडूंक जायना.",
+  'history.summary': "{saved} सांबाळ्ळे · {checkup} जाणांक तपासणी गरजेची",
+  'history.age': "पिराय: {age} वर्सां",
+  'history.color': "रंग",
+  'history.check': "तपासणी",
+  'history.exportCSV': "एक्सेल (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "हें फकत तपासणेचें साधन, निदानाचें उपकरण न्हय. योग्य निदानाखातीर दोळ्यांच्या तज्ञाचो सल्लो घेयात.",
+  'disclaimer.results': "ही फकत प्राथमीक तपासणी, वैजकी निदान न्हय. पुराय तपासणेखातीर पात्र दोळ्यांच्या तज्ञाक मेळात.",
+  'instructions.armTip': "फोन हात लांब करून धर (~{cm} सेंमी)",
+  'calibrate.cardLabel': "आधार कार्ड",
+  'calibrate.smaller': "ल्हान",
+  'calibrate.bigger': "व्हड",
+
+  'common.back': "फाटीं",
+  'common.cancel': "रद्द कर",
+  'common.ok': "बरें",
+  'common.loading': "लोड जाता...",
+};
+
+export default kok;

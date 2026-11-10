@@ -1,0 +1,97 @@
+// Urdu (اردو), right-to-left. AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const ur: Translations = {
+  'home.title': "درشٹی",
+  'home.subtitle': "بچوں کے لیے آنکھوں کی جانچ",
+  'home.startTest': "آنکھوں کی جانچ شروع کریں",
+  'home.viewHistory': "پچھلے نتائج دیکھیں",
+  'home.description': "ایک آسان آنکھوں کی جانچ، یہ جاننے کے لیے کہ کیا آپ کو چشمے کی ضرورت ہے یا رنگ دیکھنے میں مشکل ہے۔",
+
+  'language.title': "اپنی زبان چنیں",
+
+  'age.title': "آپ کی عمر کتنی ہے؟",
+  'age.subtitle': "اپنی عمر چنیں",
+  'age.years': "سال",
+  'age.next': "آگے",
+
+  'name.title': "آپ کا نام کیا ہے؟",
+  'name.subtitle': "یہ ضروری نہیں ہے",
+  'name.placeholder': "اپنا نام لکھیں",
+  'name.skip': "چھوڑیں",
+  'name.next': "آگے",
+
+  'calibrate.title': "اسکرین کا ناپ درست کریں",
+  'calibrate.instruction': "اپنا آدھار کارڈ اسکرین پر رکھیں اور خانے کا سائز کارڈ کے بالکل برابر کریں۔",
+  'calibrate.noCard': "آدھار کارڈ نہیں ہے؟ کوئی بھی عام شناختی کارڈ استعمال کریں۔",
+  'calibrate.done': "کارڈ برابر ہو گیا",
+  'calibrate.tip': "اس سے جانچ کی تصویریں صحیح سائز میں دکھائی دیتی ہیں۔",
+
+  'instructions.title': "یہ جانچ کیسے ہوتی ہے",
+  'instructions.step1': "فون کو بازو کی لمبائی پر پکڑیں",
+  'instructions.step2': "ایک آنکھ ہاتھ سے ڈھانپیں",
+  'instructions.step3': "اسکرین پر دکھائی گئی علامت سے ملائیں",
+  'instructions.step4': "اپنے انتخاب کی تصدیق کریں",
+  'instructions.ready': "میں تیار ہوں!",
+
+  'acuity.rightEye': "دائیں آنکھ",
+  'acuity.leftEye': "بائیں آنکھ",
+  'acuity.coverLeft': "اپنی بائیں آنکھ ہاتھ سے ڈھانپیں",
+  'acuity.coverRight': "اپنی دائیں آنکھ ہاتھ سے ڈھانپیں",
+  'acuity.matchSymbol': "نیچے ویسی ہی علامت دبائیں",
+  'acuity.confirm': "آپ نے یہ علامت چنی۔ کیا یہ صحیح ہے؟",
+  'acuity.yes': "ہاں ✓",
+  'acuity.no': "نہیں، دوبارہ کوشش کرتا ہوں",
+  'acuity.switchEye': "بہت خوب! اب دوسری آنکھ کی جانچ کرتے ہیں۔",
+  'acuity.switchInstruction': "اپنی دائیں آنکھ ہاتھ سے ڈھانپیں۔",
+  'acuity.continue': "جاری رکھیں",
+  'acuity.level': "درجہ",
+
+  'color.title': "رنگ پہچان کی جانچ",
+  'color.instruction': "دائرے میں آپ کو کون سا نمبر نظر آ رہا ہے؟",
+  'color.cantSee': "مجھے کوئی نمبر نظر نہیں آ رہا",
+  'color.clear': "مٹائیں",
+  'color.progress': "{total} میں سے {current}",
+
+  'results.title': "آپ کے نتائج",
+  'results.rightEye': "دائیں آنکھ",
+  'results.leftEye': "بائیں آنکھ",
+  'results.colorVision': "رنگ پہچان",
+  'results.passed': "آپ کی نظر صحت مند لگ رہی ہے!",
+  'results.failed': "ہم آنکھوں کے ڈاکٹر سے جانچ کروانے کا مشورہ دیتے ہیں۔",
+  'results.colorPassed': "آپ کی رنگ پہچان نارمل لگ رہی ہے!",
+  'results.colorFailed': "آپ کو کچھ رنگ دیکھنے میں مشکل ہو سکتی ہے۔ براہ کرم آنکھوں کے ڈاکٹر سے ملیں۔",
+  'results.newTest': "دوبارہ جانچ کریں",
+  'results.home': "پہلے صفحے پر جائیں",
+  'results.normal': "نارمل",
+  'results.needsCheck': "جانچ ضروری",
+  'results.dateSaved': "نتیجہ محفوظ ہوا",
+
+  'history.title': "پچھلے نتائج",
+  'history.noResults': "کوئی پچھلا نتیجہ نہیں ملا۔",
+  'history.clear': "سب مٹائیں",
+  'history.takeTest': "جانچ کریں",
+  'history.deleteOne': "یہ نتیجہ مٹائیں",
+  'history.clearTitle': "سارے نتائج مٹا دیں؟",
+  'history.cannotUndo': "یہ واپس نہیں ہو سکتا۔",
+  'history.summary': "{saved} محفوظ · {checkup} کو جانچ کی ضرورت",
+  'history.age': "عمر: {age} سال",
+  'history.color': "رنگ",
+  'history.check': "جانچ",
+  'history.exportCSV': "ایکسل (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "یہ صرف ایک ابتدائی جانچ کا آلہ ہے، تشخیص کا آلہ نہیں۔ صحیح تشخیص کے لیے آنکھوں کے ماہر سے مشورہ کریں۔",
+  'disclaimer.results': "یہ صرف ایک ابتدائی جانچ ہے، طبی تشخیص نہیں۔ مکمل معائنے کے لیے کسی مستند ماہرِ چشم سے ملیں۔",
+  'instructions.armTip': "فون کو بازو کی لمبائی پر پکڑیں (~{cm} سینٹی میٹر)",
+  'calibrate.cardLabel': "آدھار کارڈ",
+  'calibrate.smaller': "چھوٹا",
+  'calibrate.bigger': "بڑا",
+
+  'common.back': "واپس",
+  'common.cancel': "منسوخ",
+  'common.ok': "ٹھیک ہے",
+  'common.loading': "لوڈ ہو رہا ہے...",
+};
+
+export default ur;

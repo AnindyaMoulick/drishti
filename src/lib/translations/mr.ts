@@ -1,0 +1,97 @@
+// Marathi (मराठी). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const mr: Translations = {
+  'home.title': "दृष्टी",
+  'home.subtitle': "मुलांसाठी डोळ्यांची तपासणी",
+  'home.startTest': "डोळ्यांची तपासणी सुरू करा",
+  'home.viewHistory': "मागील निकाल पहा",
+  'home.description': "तुला चष्म्याची गरज आहे का किंवा रंग ओळखण्यात अडचण आहे का हे पाहण्यासाठी एक सोपी डोळ्यांची तपासणी.",
+
+  'language.title': "तुमची भाषा निवडा",
+
+  'age.title': "तुझे वय किती आहे?",
+  'age.subtitle': "तुझे वय निवड",
+  'age.years': "वर्षे",
+  'age.next': "पुढे",
+
+  'name.title': "तुझे नाव काय आहे?",
+  'name.subtitle': "हे ऐच्छिक आहे",
+  'name.placeholder': "तुझे नाव लिही",
+  'name.skip': "वगळा",
+  'name.next': "पुढे",
+
+  'calibrate.title': "स्क्रीनचे माप जुळवा",
+  'calibrate.instruction': "तुझे आधार कार्ड स्क्रीनवर ठेव आणि चौकटीचा आकार कार्डाएवढा अचूक जुळव.",
+  'calibrate.noCard': "आधार कार्ड नाही? कोणतेही साधे ओळखपत्र वापर.",
+  'calibrate.done': "कार्ड जुळले",
+  'calibrate.tip': "यामुळे तपासणीतील चित्रे योग्य आकारात दिसतात.",
+
+  'instructions.title': "ही तपासणी कशी होते",
+  'instructions.step1': "फोन हात लांब करून धर",
+  'instructions.step2': "हाताने एक डोळा झाक",
+  'instructions.step3': "स्क्रीनवर दिसणारे चिन्ह जुळव",
+  'instructions.step4': "तुझी निवड पक्की कर",
+  'instructions.ready': "मी तयार आहे!",
+
+  'acuity.rightEye': "उजवा डोळा",
+  'acuity.leftEye': "डावा डोळा",
+  'acuity.coverLeft': "हाताने तुझा डावा डोळा झाक",
+  'acuity.coverRight': "हाताने तुझा उजवा डोळा झाक",
+  'acuity.matchSymbol': "खाली तसेच चिन्ह दाब",
+  'acuity.confirm': "तू हे चिन्ह निवडलेस. हे बरोबर आहे का?",
+  'acuity.yes': "हो ✓",
+  'acuity.no': "नाही, पुन्हा प्रयत्न करतो",
+  'acuity.switchEye': "छान! आता दुसऱ्या डोळ्याची तपासणी करूया.",
+  'acuity.switchInstruction': "हाताने तुझा उजवा डोळा झाक.",
+  'acuity.continue': "पुढे चला",
+  'acuity.level': "पातळी",
+
+  'color.title': "रंग ओळख तपासणी",
+  'color.instruction': "वर्तुळात तुला कोणता अंक दिसतो?",
+  'color.cantSee': "मला कोणताही अंक दिसत नाही",
+  'color.clear': "पुसा",
+  'color.progress': "{total} पैकी {current}",
+
+  'results.title': "तुझे निकाल",
+  'results.rightEye': "उजवा डोळा",
+  'results.leftEye': "डावा डोळा",
+  'results.colorVision': "रंग ओळख",
+  'results.passed': "तुझी दृष्टी निरोगी दिसते!",
+  'results.failed': "एकदा डोळ्यांच्या डॉक्टरांकडे तपासणी करून घ्यावी असे आम्ही सुचवतो.",
+  'results.colorPassed': "तुझी रंग ओळख सामान्य दिसते!",
+  'results.colorFailed': "तुला काही रंग ओळखण्यात अडचण येऊ शकते. कृपया डोळ्यांच्या डॉक्टरांना भेट.",
+  'results.newTest': "पुन्हा तपासणी करा",
+  'results.home': "मुख्य पानावर जा",
+  'results.normal': "सामान्य",
+  'results.needsCheck': "तपासणी आवश्यक",
+  'results.dateSaved': "निकाल जतन केला",
+
+  'history.title': "मागील निकाल",
+  'history.noResults': "मागील कोणतेही निकाल सापडले नाहीत.",
+  'history.clear': "सर्व हटवा",
+  'history.takeTest': "तपासणी करा",
+  'history.deleteOne': "हा निकाल हटवा",
+  'history.clearTitle': "सर्व निकाल हटवायचे?",
+  'history.cannotUndo': "हे परत आणता येणार नाही.",
+  'history.summary': "{saved} जतन · {checkup} जणांना तपासणी आवश्यक",
+  'history.age': "वय: {age} वर्षे",
+  'history.color': "रंग",
+  'history.check': "तपासणी",
+  'history.exportCSV': "एक्सेल (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "हे फक्त तपासणीचे साधन आहे, निदानाचे उपकरण नाही. योग्य निदानासाठी नेत्रतज्ज्ञांचा सल्ला घ्या.",
+  'disclaimer.results': "ही फक्त प्राथमिक तपासणी आहे, वैद्यकीय निदान नाही. संपूर्ण तपासणीसाठी पात्र नेत्रतज्ज्ञांना भेटा.",
+  'instructions.armTip': "फोन हात लांब करून धर (~{cm} सेमी)",
+  'calibrate.cardLabel': "आधार कार्ड",
+  'calibrate.smaller': "लहान",
+  'calibrate.bigger': "मोठे",
+
+  'common.back': "मागे",
+  'common.cancel': "रद्द करा",
+  'common.ok': "ठीक आहे",
+  'common.loading': "लोड होत आहे...",
+};
+
+export default mr;

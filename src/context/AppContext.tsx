@@ -4,6 +4,8 @@ import React, { createContext, useContext, useEffect, useReducer, ReactNode } fr
 import { AppState, LanguageCode, Eye, EyeResult, ColorTestResult, TestResult } from '@/types';
 import { saveTestResult, generateId } from '@/lib/storage';
 import { getArmLength } from '@/lib/calibration';
+import { RTL_LANGUAGES } from '@/lib/i18n';
+import { getSpeechLang } from '@/lib/audio';
 
 interface AppContextType {
   state: AppState;
@@ -81,6 +83,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
     } catch { /* storage blocked or corrupt: start fresh */ }
     dispatch({ type: 'HYDRATE', payload: saved });
   }, []);
+
+  // Match <html lang/dir> to the chosen language (screen readers, fonts, Urdu/Sindhi/Kashmiri RTL).
+  useEffect(() => {
+    const code = store.language || 'en';
+    document.documentElement.lang = getSpeechLang(code);
+    document.documentElement.dir = RTL_LANGUAGES.has(code) ? 'rtl' : 'ltr';
+  }, [store.language]);
 
   useEffect(() => {
     if (!store.hydrated) return;

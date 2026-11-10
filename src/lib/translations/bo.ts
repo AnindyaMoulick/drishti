@@ -1,0 +1,99 @@
+// Bodo (बड़ो, Devanagari). AI-drafted, LOW confidence: must be reviewed by a native speaker
+// before use with children (see NEEDS_REVIEW in i18n.ts).
+// Note: 'bo' is this app's internal code for Bodo (ISO 639 is 'brx'; 'bo' is Tibetan).
+import type { Translations } from './types';
+
+const bo: Translations = {
+  'home.title': "दृष्टि",
+  'home.subtitle': "गथांफोरनि थाखाय मेगन नायगिरनाय",
+  'home.startTest': "मेगन नायगिरनाय जागायजेन",
+  'home.viewHistory': "सिगांनि फोलाफोलफोर नाय",
+  'home.description': "नोंनो चश्मा नांगौ नामा रं सिनायथिनो गोब्राब जायो, बेखौ मिथिनो थाखाय मोनसे गोरलै मेगन नायगिरनाय।",
+
+  'language.title': "नोंनि राव सायख",
+
+  'age.title': "नोंनि बैसो बेसेबां?",
+  'age.subtitle': "नोंनि बैसो सायख",
+  'age.years': "बोसोर",
+  'age.next': "उननि",
+
+  'name.title': "नोंनि मुंआ मा?",
+  'name.subtitle': "बेयो गोनांथार नङा",
+  'name.placeholder': "नोंनि मुं लिर",
+  'name.skip': "नागार",
+  'name.next': "उननि",
+
+  'calibrate.title': "स्क्रिननि महर फोजोब",
+  'calibrate.instruction': "नोंनि आधार कार्डखौ स्क्रिननि सिङाव दोन आरो बाक्सोनि महरखौ कार्डजों रोखोमै फोजोब।",
+  'calibrate.noCard': "आधार कार्ड गैया? जायखिजाया सिनायथि कार्ड बाहायनो हाया।",
+  'calibrate.done': "कार्ड फोजोबजाबाय",
+  'calibrate.tip': "बेनि थाखाय नायगिरनायनि सावगारिफोरा थार महराव नुयो।",
+
+  'instructions.title': "बे नायगिरनायआ माबोरै जायो",
+  'instructions.step1': "फोनखौ आखाय गोलाव खालामनानै गोजानाव हम",
+  'instructions.step2': "आखायजों मोनसे मेगन खुं",
+  'instructions.step3': "स्क्रिनाव दिन्थिनाय सिनखौ फोजोब",
+  'instructions.step4': "नोंनि सायखनायखौ थार खालाम",
+  'instructions.ready': "आं थियारि!",
+
+  'acuity.rightEye': "आगदा मेगन",
+  'acuity.leftEye': "आसि मेगन",
+  'acuity.coverLeft': "आखायजों नोंनि आसि मेगनखौ खुं",
+  'acuity.coverRight': "आखायजों नोंनि आगदा मेगनखौ खुं",
+  'acuity.matchSymbol': "सिङाव रोखोम सिनखौ नेवसि",
+  'acuity.confirm': "नोंथाङा बे सिनखौ सायखबाय। बेयो थार नामा?",
+  'acuity.yes': "नंगौ ✓",
+  'acuity.no': "नङा, फिन नाजानो",
+  'acuity.switchEye': "जोबोद मोजां! दा गुबुन मेगनखौ नायगिरसि।",
+  'acuity.switchInstruction': "आखायजों नोंनि आगदा मेगनखौ खुं।",
+  'acuity.continue': "सिगाङाव थां",
+  'acuity.level': "थाखो",
+
+  'color.title': "रं सिनायनाय नायगिरनाय",
+  'color.instruction': "गोलावनि गेजेराव नोंथाङा मा अनजिमा नुयो?",
+  'color.cantSee': "आं जायखि अनजिमा नुया",
+  'color.clear': "खोमोर",
+  'color.progress': "{total} निफ्राय {current}",
+
+  'results.title': "नोंनि फोलाफोलफोर",
+  'results.rightEye': "आगदा मेगन",
+  'results.leftEye': "आसि मेगन",
+  'results.colorVision': "रं सिनायनाय",
+  'results.passed': "नोंनि मेगन मोजां नुयो!",
+  'results.failed': "मेगननि डाक्टरजों नायहोनो बुङो।",
+  'results.colorPassed': "नोंनि रं सिनायनाया गोरलै नुयो!",
+  'results.colorFailed': "नोंनो माखासे रं नायनो गोब्राब जानो हायो। अननानै मेगननि डाक्टरजों लोगो।",
+  'results.newTest': "फिन नायगिर",
+  'results.home': "गिबि बिलाइआव थां",
+  'results.normal': "गोरलै",
+  'results.needsCheck': "नायगिरनाय नांगौ",
+  'results.dateSaved': "फोलाफोल थिनाय जादों",
+
+  'history.title': "सिगांनि फोलाफोलफोर",
+  'history.noResults': "जायखि सिगांनि फोलाफोल मोनाखै।",
+  'history.clear': "गासैबो खोमोर",
+  'history.takeTest': "नायगिर",
+  'history.deleteOne': "बे फोलाफोलखौ खोमोर",
+  'history.clearTitle': "गासै फोलाफोलखौ खोमोरनो?",
+  'history.cannotUndo': "बेखौ फिननो हाया।",
+  'history.summary': "{saved} थिनाय · {checkup} नायगिरनाय नांगौ",
+  'history.age': "बैसो: {age} बोसोर",
+  'history.color': "रं",
+  'history.check': "नायगिरनाय",
+  'history.exportCSV': "एक्सेल (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "बेयो नायगिरनायनि आयजें खालि, बेराम सिनायथिनाय आयजें नङा। थार सिनायथिनायनि थाखाय मेगननि गियानिजों बुद्धि ला।",
+  'disclaimer.results': "बेयो गिबि नायगिरनाय खालि, डाक्टरनि बेराम सिनायथिनाय नङा। आबुं नायगिरनायनि थाखाय मोनसे मेगननि गियानिजों लोगो।",
+  'instructions.armTip': "फोनखौ आखाय गोलाव खालामनानै गोजानाव हम (~{cm} सें.मी.)",
+  'calibrate.cardLabel': "आधार कार्ड",
+  'calibrate.smaller': "फिसा",
+  'calibrate.bigger': "गेदेर",
+
+  'common.back': "उनथिं",
+  'common.cancel': "बाति",
+  'common.ok': "जाबाय",
+  'common.loading': "लोड जायो...",
+};
+
+export default bo;

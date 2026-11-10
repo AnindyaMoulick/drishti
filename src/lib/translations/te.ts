@@ -1,0 +1,97 @@
+// Telugu (తెలుగు). AI-drafted: needs native-speaker review (see NEEDS_REVIEW in i18n.ts).
+import type { Translations } from './types';
+
+const te: Translations = {
+  'home.title': "దృష్టి",
+  'home.subtitle': "పిల్లల కోసం కంటి పరీక్ష",
+  'home.startTest': "కంటి పరీక్ష ప్రారంభించు",
+  'home.viewHistory': "పాత ఫలితాలు చూడు",
+  'home.description': "నీకు కళ్లద్దాలు అవసరమా లేదా రంగులు చూడడంలో ఇబ్బంది ఉందా అని తెలుసుకోవడానికి ఒక సులభమైన కంటి పరీక్ష.",
+
+  'language.title': "నీ భాషను ఎంచుకో",
+
+  'age.title': "నీ వయసు ఎంత?",
+  'age.subtitle': "నీ వయసును ఎంచుకో",
+  'age.years': "సంవత్సరాలు",
+  'age.next': "తరువాత",
+
+  'name.title': "నీ పేరు ఏమిటి?",
+  'name.subtitle': "ఇది ఇవ్వకపోయినా పర్వాలేదు",
+  'name.placeholder': "నీ పేరు రాయి",
+  'name.skip': "వదిలేయి",
+  'name.next': "తరువాత",
+
+  'calibrate.title': "స్క్రీన్ కొలత సరిచేయి",
+  'calibrate.instruction': "నీ ఆధార్ కార్డును స్క్రీన్ మీద పెట్టి, పెట్టె పరిమాణాన్ని కార్డుకు సరిగ్గా సరిపోయేలా మార్చు.",
+  'calibrate.noCard': "ఆధార్ కార్డు లేదా? ఏదైనా సాధారణ గుర్తింపు కార్డు వాడు.",
+  'calibrate.done': "కార్డు సరిపోయింది",
+  'calibrate.tip': "దీనివల్ల పరీక్షలోని బొమ్మలు సరైన పరిమాణంలో కనిపిస్తాయి.",
+
+  'instructions.title': "ఈ పరీక్ష ఎలా జరుగుతుంది",
+  'instructions.step1': "ఫోన్‌ను చేయి చాచినంత దూరంలో పట్టుకో",
+  'instructions.step2': "చేత్తో ఒక కన్ను మూసుకో",
+  'instructions.step3': "స్క్రీన్ మీద కనిపించే గుర్తును జత చేయి",
+  'instructions.step4': "నీ ఎంపికను నిర్ధారించు",
+  'instructions.ready': "నేను సిద్ధం!",
+
+  'acuity.rightEye': "కుడి కన్ను",
+  'acuity.leftEye': "ఎడమ కన్ను",
+  'acuity.coverLeft': "చేత్తో నీ ఎడమ కన్ను మూసుకో",
+  'acuity.coverRight': "చేత్తో నీ కుడి కన్ను మూసుకో",
+  'acuity.matchSymbol': "కింద అదే గుర్తును నొక్కు",
+  'acuity.confirm': "నువ్వు ఈ గుర్తును ఎంచుకున్నావు. ఇది సరైనదేనా?",
+  'acuity.yes': "అవును ✓",
+  'acuity.no': "కాదు, మళ్లీ ప్రయత్నిస్తాను",
+  'acuity.switchEye': "చాలా బాగుంది! ఇప్పుడు నీ మరో కంటిని పరీక్షిద్దాం.",
+  'acuity.switchInstruction': "చేత్తో నీ కుడి కన్ను మూసుకో.",
+  'acuity.continue': "కొనసాగించు",
+  'acuity.level': "స్థాయి",
+
+  'color.title': "రంగు చూపు పరీక్ష",
+  'color.instruction': "వృత్తంలో నీకు ఏ సంఖ్య కనిపిస్తోంది?",
+  'color.cantSee': "నాకు ఏ సంఖ్యా కనిపించడం లేదు",
+  'color.clear': "తుడిచేయి",
+  'color.progress': "{total}లో {current}",
+
+  'results.title': "నీ ఫలితాలు",
+  'results.rightEye': "కుడి కన్ను",
+  'results.leftEye': "ఎడమ కన్ను",
+  'results.colorVision': "రంగు చూపు",
+  'results.passed': "నీ చూపు ఆరోగ్యంగా ఉన్నట్లు కనిపిస్తోంది!",
+  'results.failed': "ఒకసారి కంటి డాక్టర్‌ను కలవమని సూచిస్తున్నాం.",
+  'results.colorPassed': "నీ రంగు చూపు సాధారణంగా ఉన్నట్లు కనిపిస్తోంది!",
+  'results.colorFailed': "కొన్ని రంగులు చూడడంలో నీకు ఇబ్బంది ఉండవచ్చు. దయచేసి కంటి డాక్టర్‌ను కలువు.",
+  'results.newTest': "మరో పరీక్ష చేయి",
+  'results.home': "మొదటి పేజీకి వెళ్లు",
+  'results.normal': "సాధారణం",
+  'results.needsCheck': "పరీక్ష అవసరం",
+  'results.dateSaved': "ఫలితం భద్రపరచబడింది",
+
+  'history.title': "పాత ఫలితాలు",
+  'history.noResults': "పాత ఫలితాలు ఏవీ లేవు.",
+  'history.clear': "అన్నీ తొలగించు",
+  'history.takeTest': "పరీక్ష చేయి",
+  'history.deleteOne': "ఈ ఫలితాన్ని తొలగించు",
+  'history.clearTitle': "అన్ని ఫలితాలను తొలగించాలా?",
+  'history.cannotUndo': "దీన్ని వెనక్కి తీసుకోలేము.",
+  'history.summary': "{saved} భద్రపరచబడ్డాయి · {checkup}కి పరీక్ష అవసరం",
+  'history.age': "వయసు: {age} సంవత్సరాలు",
+  'history.color': "రంగు",
+  'history.check': "పరీక్ష",
+  'history.exportCSV': "ఎక్సెల్ (CSV)",
+  'history.exportJSON': "JSON",
+
+  'disclaimer.home': "ఇది కేవలం స్క్రీనింగ్ సాధనం, రోగ నిర్ధారణ పరికరం కాదు. సరైన నిర్ధారణ కోసం కంటి నిపుణుడిని సంప్రదించండి.",
+  'disclaimer.results': "ఇది కేవలం స్క్రీనింగ్ మాత్రమే, వైద్య నిర్ధారణ కాదు. పూర్తి పరీక్ష కోసం అర్హత ఉన్న కంటి నిపుణుడిని కలవండి.",
+  'instructions.armTip': "ఫోన్‌ను చేయి చాచినంత దూరంలో పట్టుకో (~{cm} సెం.మీ.)",
+  'calibrate.cardLabel': "ఆధార్ కార్డు",
+  'calibrate.smaller': "చిన్నది",
+  'calibrate.bigger': "పెద్దది",
+
+  'common.back': "వెనక్కి",
+  'common.cancel': "రద్దు చేయి",
+  'common.ok': "సరే",
+  'common.loading': "లోడ్ అవుతోంది...",
+};
+
+export default te;

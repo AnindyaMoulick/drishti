@@ -100,7 +100,7 @@ export default function ColorTestPage() {
       <div className="text-center mb-4">
         <h1 className="text-xl font-bold text-slate-800">{t('color.title', lang)}</h1>
         <p className="text-sm text-slate-400 mt-1">
-          {plateIndex + 1} {t('color.plateOf', lang)} {totalPlates}
+          {t('color.progress', lang, { current: plateIndex + 1, total: totalPlates })}
         </p>
       </div>
 
@@ -125,7 +125,7 @@ export default function ColorTestPage() {
         </div>
 
         {/* Number pad */}
-        <div className="grid grid-cols-5 gap-2 mb-3 w-full max-w-xs">
+        <div dir="ltr" className="grid grid-cols-5 gap-2 mb-3 w-full max-w-xs">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(num => (
             <button
               key={num}

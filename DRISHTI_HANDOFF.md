@@ -99,7 +99,8 @@ drishti/
     │   ├── calibration.ts    # calculatePPI(), getArmLength(), calculateSymbolSizePx()
     │   ├── storage.ts        # localStorage save/get/delete, exportResults() JSON, exportResultsCSV()
     │   ├── audio.ts          # speak(), language → speech-voice mapping
-    │   └── i18n.ts           # t(key, lang): English + Hindi only; others fall back to English
+    │   ├── i18n.ts           # t(key, lang, vars), RTL_LANGUAGES, NEEDS_REVIEW
+    │   └── translations/     # one file per language; en.ts is the source; TS enforces every key
     ├── context/AppContext.tsx  # Global state (language, age, PPI, arm length, name) + saveResults()
     └── components/
         ├── LEASymbols.tsx         # SVG house/circle/square/apple (shapes fill 80% of viewBox)
@@ -127,6 +128,7 @@ drishti/
 - `npx tsc --noEmit --incremental false` → **0 errors**; `npx eslint src` → **0 problems**.
 - **End-to-end test passes (0 problems)**: `node scripts/e2e.js` with the dev server on :3000. Covers the full flow, refresh on the acuity page, localStorage save, history, Hindi name + history pages. Screenshots in `scripts/e2e-output/` (git-ignored).
 - Session 2: all UI text goes through `t()` (with `{placeholder}` support); app state persists in `sessionStorage["drishti_state"]` so a refresh keeps language/age/calibration (`hydrated` flag in context; pages wait for it before guards, speech or storage reads); unused code removed (to-do 3, 4, 8).
+- Session 2: **all 22 languages translated** (AI-drafted, listed in `NEEDS_REVIEW`). `<html lang dir>` follows the chosen language; Urdu, Sindhi and Kashmiri render right-to-left (the color keypad stays LTR). Kashmiri switched to Perso-Arabic script. Bodo speech uses `brx-IN` (`bo` is Tibetan).
 - `npm run build` → **succeeds**; all routes build as static pages.
 - Dev server started successfully and a phone on the LAN (`192.168.1.14`) connected → added to `allowedDevOrigins`.
 
@@ -138,7 +140,7 @@ drishti/
 ## 6. Known Gaps & To-Do (priority order)
 
 1. ~~Run the end-to-end test~~ (done, passes). Still to do: **test by hand on a real phone** (calibration accuracy, small-symbol rendering, audio).
-2. **Translations:** only **English + Hindi** are done. The other 21 languages (Bengali, Telugu, Marathi, Tamil, Urdu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese, Maithili, Santali, Kashmiri, Nepali, Sindhi, Dogri, Konkani, Manipuri, Bodo, Sanskrit) show English. Add them to `src/lib/i18n.ts` (~75 keys each). Urdu/Sindhi/Kashmiri need **right-to-left** layout (`dir="rtl"`).
+2. ~~**Translations**~~ (done in session 2, but **every language except English needs native-speaker review** before real use; lowest confidence: Santali, Kashmiri, Dogri, Manipuri, Bodo, Maithili. Remove a code from `NEEDS_REVIEW` in `i18n.ts` once reviewed. Also check on real phones that Ol Chiki, Nastaliq and Meitei fonts are installed.) Previously: only **English + Hindi** were done. The other 21 languages (Bengali, Telugu, Marathi, Tamil, Urdu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese, Maithili, Santali, Kashmiri, Nepali, Sindhi, Dogri, Konkani, Manipuri, Bodo, Sanskrit) show English. Add them to `src/lib/i18n.ts` (~75 keys each). Urdu/Sindhi/Kashmiri need **right-to-left** layout (`dir="rtl"`).
 3. ~~**Some text is still hard-coded in English**~~ (done in session 2) (not passed through `t()`): the History page labels, the disclaimers, the "Hold phone at arm's length" tip, and the Language page heading.
 4. ~~**Progress is lost on page refresh:**~~ (done: settings persist; an in-progress acuity or color test restarts from its first level/plate) state lives in React context only. Test pages redirect to the start if calibration is missing. Could persist state in sessionStorage.
 5. **Offline / PWA:** a manifest exists but there's **no service worker** yet, and the icons are just the favicon. Needed so it works in schools with poor internet.
