@@ -1,0 +1,13 @@
+{
+  "name": "Drishti - Vision Screening",
+  "short_name": "Drishti",
+  "description": "Visual acuity and color vision screening for Indian school children",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8FAFC",
+  "theme_color": "#4F46E5",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" }
+  ]
+}
