@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <linearGradient id="innerGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1E1B4B" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  
+  <!-- Base Squircle -->
+  <rect width="512" height="512" rx="115" fill="url(#bgGrad)"/>
+  <rect width="512" height="512" rx="115" fill="url(#innerGlow)"/>
+  
+  <!-- Drishti Eye (from Home Page) with subtle soft shadow -->
+  <g filter="url(#shadow)">
+    <g transform="translate(256, 256) scale(14.5) translate(-12, -12)">
+      <!-- Eye outline -->
+      <path 
+        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" 
+        stroke="#FFFFFF" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"
+      />
+      <!-- Eye pupil / iris -->
+      <circle cx="12" cy="12" r="3.5" fill="#FFFFFF"/>
+    </g>
+  </g>
+</svg>
