@@ -42,3 +42,5 @@ next-env.d.ts
 
 # e2e screenshots / browser profile
 /scripts/e2e-output/
+
+.vercel

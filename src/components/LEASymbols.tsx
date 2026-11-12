@@ -11,43 +11,49 @@ interface LEASymbolProps {
   className?: string;
 }
 
-// House: Simple house shape (pentagon top + rectangle bottom)
-// Circle: Perfect circle
-// Square: Perfect square
-// Apple: Apple with a small leaf
+/**
+ * LEA-style outline symbols, built like a standard optotype (and like the
+ * tumbling E used by WHOeyes): the symbol spans 5 units and its line is 1 unit
+ * thick. In the 100-unit viewBox the symbol spans 10→90 (80 units), so the line
+ * is 16 units. At the 6/6 size the whole symbol subtends 5 arc minutes and the
+ * line 1 arc minute, the detail a normal eye resolves.
+ *
+ * Solid silhouettes (used before) are NOT equivalent: at small sizes a filled
+ * circle, square and apple blur into the same blob, so 6/9 and 6/6 became
+ * impossible even for normal vision.
+ */
+const STROKE = 16;
 
 export function LEASymbol({ symbol, size, color = '#000000', className = '' }: LEASymbolProps) {
-  const viewBox = '0 0 100 100';
+  const line = {
+    fill: 'none',
+    stroke: color,
+    strokeWidth: STROKE,
+    strokeLinejoin: 'miter' as const,
+    strokeLinecap: 'round' as const,
+  };
 
   const renderSymbol = () => {
     switch (symbol) {
-      case 'house':
-        return (
-          <g>
-            {/* Roof - triangle */}
-            <polygon points="50,10 10,50 90,50" fill={color} />
-            {/* Body - rectangle */}
-            <rect x="20" y="50" width="60" height="40" fill={color} />
-            {/* Door */}
-            <rect x="40" y="60" width="20" height="30" fill="white" />
-          </g>
-        );
       case 'circle':
-        return <circle cx="50" cy="50" r="40" fill={color} />;
+        // outer diameter 80
+        return <circle cx="50" cy="50" r="32" {...line} />;
       case 'square':
-        return <rect x="10" y="10" width="80" height="80" fill={color} />;
+        // slightly smaller than the circle, as in the LEA chart, so neither stands out by size
+        return <rect x="20" y="20" width="60" height="60" {...line} />;
+      case 'house':
+        // pentagon outline: roof + walls
+        return <path d="M50 19 L80 45 L80 82 L20 82 L20 45 Z" {...line} strokeLinejoin="round" />;
       case 'apple':
+        // apple outline with the notch at the top and a short stem
         return (
           <g>
-            {/* Apple body */}
-            <ellipse cx="42" cy="58" rx="28" ry="32" fill={color} />
-            <ellipse cx="58" cy="58" rx="28" ry="32" fill={color} />
-            {/* Stem */}
-            <rect x="47" y="18" width="6" height="16" rx="2" fill={color} />
-            {/* Leaf */}
-            <ellipse cx="62" cy="24" rx="12" ry="6" fill={color} transform="rotate(-30, 62, 24)" />
-            {/* Indent at top */}
-            <circle cx="50" cy="30" r="8" fill="white" />
+            <path
+              d="M50 34 C42 24 18 24 18 50 C18 70 34 84 50 81 C66 84 82 70 82 50 C82 24 58 24 50 34 Z"
+              {...line}
+              strokeLinejoin="round"
+            />
+            <path d="M50 30 L55 14" {...line} strokeWidth={STROKE * 0.75} />
           </g>
         );
       default:
@@ -59,10 +65,11 @@ export function LEASymbol({ symbol, size, color = '#000000', className = '' }: L
     <svg
       width={size}
       height={size}
-      viewBox={viewBox}
+      viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-label={symbol}
+      shapeRendering="geometricPrecision"
     >
       {renderSymbol()}
     </svg>

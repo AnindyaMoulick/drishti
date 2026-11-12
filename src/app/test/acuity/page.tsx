@@ -20,6 +20,16 @@ import { LEASymbol, Eye, SymbolResponse, EyeResult } from '@/types';
 /** The SVG symbols occupy 80% of their viewBox (10 → 90), so scale up the box. */
 const SYMBOL_FILL_RATIO = 0.8;
 
+/**
+ * The symbol's line is 1/5 of the symbol (16 of the 100-unit box). A line
+ * thinner than 2 real screen pixels can't be drawn sharply and turns grey and
+ * blurry, so very small sizes on low-resolution screens are raised to that
+ * minimum. On a normal phone (devicePixelRatio 2-3) this only affects sizes
+ * smaller than 6/6, so the chart stays physically accurate there.
+ */
+const MIN_LINE_DEVICE_PX = 2;
+const LINE_FRACTION_OF_BOX = 0.16;
+
 function pickRandomSymbol(lastSymbol: LEASymbol | null): LEASymbol {
   const available = LEA_SYMBOLS.filter(s => s !== lastSymbol);
   return available[Math.floor(Math.random() * available.length)];
@@ -75,7 +85,7 @@ export default function AcuityTestPage() {
 
 function AcuityTest({ ppi, distance }: { ppi: number; distance: number }) {
   const router = useRouter();
-  const { state, setCurrentEye } = useApp();
+  const { state, setCurrentEye, saveResults } = useApp();
   const lang = state.language || 'en';
   const speechLang = getSpeechLang(lang);
 
@@ -99,7 +109,12 @@ function AcuityTest({ ppi, distance }: { ppi: number; distance: number }) {
   const currentLevel = ACUITY_LEVELS[levelIndex];
 
   const symbolBoxPx = useMemo(
-    () => calculateSymbolSizePx(currentLevel.logMAR, distance, ppi) / SYMBOL_FILL_RATIO,
+    () => {
+      const exact = calculateSymbolSizePx(currentLevel.logMAR, distance, ppi) / SYMBOL_FILL_RATIO;
+      const dpr = window.devicePixelRatio || 1;
+      const minBox = MIN_LINE_DEVICE_PX / LINE_FRACTION_OF_BOX / dpr;
+      return Math.max(exact, minBox);
+    },
     [currentLevel, distance, ppi]
   );
 
@@ -110,10 +125,11 @@ function AcuityTest({ ppi, distance }: { ppi: number; distance: number }) {
       setShowSwitchEye(true);
       speak(t('acuity.switchEye', lang) + ' ' + t('acuity.switchInstruction', lang), speechLang);
     } else {
+      // The eyesight test ends here; the colour blindness test is a separate choice on the home screen.
       finishing.current = true;
-      sessionStorage.setItem('drishti_rightEye', JSON.stringify(rightEyeResult));
-      sessionStorage.setItem('drishti_leftEye', JSON.stringify(result));
-      router.push('/test/color');
+      const saved = saveResults({ rightEye: rightEyeResult ?? undefined, leftEye: result });
+      sessionStorage.setItem('drishti_lastResultId', saved.id);
+      router.push('/results');
     }
   };
 

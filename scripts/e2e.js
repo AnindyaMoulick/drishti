@@ -79,14 +79,49 @@ async function main() {
   const bodyText = () => evaluate('document.body.innerText');
 
   await send('Runtime.enable'); await send('Log.enable'); await send('Page.enable');
+  // Fake microphone (headless Chrome has no real one), behaving like Chrome's continuous mode:
+  // each phrase pushed to window.__fakeQueue arrives word by word as interim results, then
+  // as a final result, then (like Android) the final result once more. After 4 s of
+  // silence the session ends with "no-speech" and the app must restart it.
+  await send('Page.addScriptToEvaluateOnNewDocument', { source: `
+    window.__fakeQueue = []; window.__fakeStarts = 0;
+    class FakeRecognition {
+      start() {
+        window.__fakeStarts++;
+        this.results = []; this.steps = []; let quiet = Date.now();
+        const emit = (text, isFinal) => {
+          const res = [{ transcript: text }]; res.isFinal = isFinal;
+          if (isFinal || !this.results.length || this.results[this.results.length - 1].isFinal) this.results.push(res);
+          else this.results[this.results.length - 1] = res;
+          this.onresult && this.onresult({ results: this.results.slice() });
+        };
+        this.timer = setInterval(() => {
+          if (this.steps.length) { this.steps.shift()(); quiet = Date.now(); return; }
+          if (window.__fakeQueue.length) {
+            const said = window.__fakeQueue.shift(); const words = said.split(' ');
+            words.forEach((w, i) => this.steps.push(() => emit(words.slice(0, i + 1).join(' '), false)));
+            this.steps.push(() => emit(said, true));
+            this.steps.push(() => emit(said, true));
+            return;
+          }
+          if (Date.now() - quiet > 4000) {
+            clearInterval(this.timer);
+            this.onerror && this.onerror({ error: 'no-speech' });
+            this.onend && this.onend();
+          }
+        }, 100);
+      }
+      abort() { clearInterval(this.timer); this.onerror && this.onerror({ error: 'aborted' }); this.onend && this.onend(); }
+    }
+    window.SpeechRecognition = FakeRecognition; window.webkitSpeechRecognition = FakeRecognition;` });
   await send('Emulation.setDeviceMetricsOverride', { width: 412, height: 915, deviceScaleFactor: 2, mobile: true });
 
   // ---------- Home ----------
   await send('Page.navigate', { url: BASE + '/' });
-  await waitFor(`document.body.innerText.includes('Start Eye Test')`, 'home');
+  await waitFor(`document.body.innerText.includes('Eyesight Test')`, 'home');
   await evaluate(`localStorage.clear(); sessionStorage.clear(); true`);
   await screenshot('home');
-  await clickText('Start Eye Test');
+  await clickText('Eyesight Test');
 
   // ---------- Language ----------
   await waitPath('/language');
@@ -124,15 +159,15 @@ async function main() {
 
   // ---------- Acuity ----------
   await waitPath('/test/acuity');
-  await waitFor(`document.body.innerText.includes('Level 1/11')`, 'acuity level 1');
+  await waitFor(`document.body.innerText.includes('Level 1/7')`, 'acuity level 1');
   // A refresh must keep calibration (sessionStorage) instead of bouncing to /language
   await send('Page.reload');
   await sleep(2500);
   if ((await evaluate('location.pathname')) !== '/test/acuity') problems.push('Refresh on acuity page lost state');
-  await waitFor(`document.body.innerText.includes('Level 1/11')`, 'acuity level 1 after reload');
+  await waitFor(`document.body.innerText.includes('Level 1/7')`, 'acuity level 1 after reload');
   const displayed = `document.querySelector('div.rounded-3xl svg')?.getAttribute('aria-label')`;
   const levelNo = async () => {
-    const m = (await bodyText()).match(/Level (\d+)\/11/);
+    const m = (await bodyText()).match(/Level (\d+)\/7/);
     return m ? +m[1] : null;
   };
   async function runEye(eyeName, failFromLevel) {
@@ -145,7 +180,7 @@ async function main() {
       const sym = await evaluate(displayed);
       const size = await evaluate(`document.querySelector('div.rounded-3xl svg')?.getAttribute('width')`);
       if (guard === 0 || answers % 3 === 0) log(`${eyeName} eye level ${lvl}: shown=${sym} box=${(+size).toFixed(1)}px`);
-      if (lvl === 4 && eyeName === 'right' && answers === 9) await screenshot('acuity-right-level4');
+      if (lvl === 4 && eyeName === 'right' && answers === 6) await screenshot('acuity-right-level4');
       const wrong = lvl >= failFromLevel;
       const choice = wrong ? ['house', 'circle', 'square', 'apple'].find(s => s !== sym) : sym;
       await evaluate(`document.querySelector('button[aria-label="${choice}"]').click(), true`);
@@ -174,43 +209,103 @@ async function main() {
   await screenshot('switch-eye');
   await clickText('Continue');
   await waitFor(`document.body.innerText.includes('Left Eye')`, 'left eye');
-  const leftAnswers = await runEye('left', 6);   // left eye fails from level 6 (6/19)
+  const leftAnswers = await runEye('left', 4);   // left eye fails from level 4 (6/18), so best is 6/24
   log('Left eye answers:', leftAnswers);
 
-  // ---------- Color ----------
-  await waitPath('/test/color');
-  const plateAnswers = [12, 8, 5, 29, 74, 6, 45, 3];
-  for (let i = 0; i < plateAnswers.length; i++) {
-    await waitFor(`document.body.innerText.includes('${i + 1} of 8')`, 'plate ' + (i + 1));
-    await sleep(300);
-    await screenshot(`color-plate-${i + 1}`);
-    if (i === 6) { await clickText("can't see"); continue; } // one miss
-    for (const d of String(plateAnswers[i])) {
-      await evaluate(`[...document.querySelectorAll('button')].find(b => b.innerText.trim() === '${d}').click(), true`);
-      await sleep(60);
-    }
-    await clickText('OK');
-  }
-
-  // ---------- Results ----------
+  // ---------- Eyesight results (no colour test in this flow) ----------
   await waitPath('/results');
   await waitFor(`document.body.innerText.includes('Your Results')`, 'results');
-  await screenshot('results');
-  const resText = await bodyText();
-  log('Results text:\n' + resText.split('\n').filter(Boolean).map(l => '    ' + l).join('\n'));
+  await screenshot('results-eyesight');
+  let resText = await bodyText();
+  log('Eyesight results:\n' + resText.split('\n').filter(Boolean).map(l => '    ' + l).join('\n'));
+  if (resText.includes('Color Vision')) problems.push('Eyesight results should not show a colour card');
+
+  // ---------- Colour blindness test, chosen separately on the home screen ----------
+  await send('Page.navigate', { url: BASE + '/' });
+  await waitFor(`document.body.innerText.includes('Color Blindness Test')`, 'home (colour)'); await sleep(2500);
+  await screenshot('home-choice');
+  await clickText('Color Blindness Test');
+  await waitPath('/language');
+  await clickText('English');
+  await waitPath('/name');
+  await clickText('Skip');
+  await waitPath('/age');
+  await evaluate(`[...document.querySelectorAll('button')].find(b => b.innerText.trim() === '9').click(), true`);
+  await sleep(150);
+  await clickText('Next');
+  await waitPath('/test/color');  // no calibration or acuity screens
+  // Voice answers: the child speaks, the app shows the number and moves on by itself.
+  const say = (phrase) => evaluate(`window.__fakeQueue.push(${JSON.stringify(phrase)}), true`);
+  const atPlate = (n) => waitFor(`document.body.innerText.includes('${n} of 12')`, 'plate ' + n);
+  await atPlate(1); await sleep(300); await screenshot('color-plate-1');
+  await clickText('Say the number');
+  await say('twelve');
+  await waitFor(`document.body.innerText.includes('You said 12.')`, 'shows heard 12');
+  await screenshot('color-voice-heard');
+  await atPlate(2);                       // moved on without any tap
+  let t0 = Date.now();
+  await say('it is 8');
+  await atPlate(3);
+  const quick = Date.now() - t0;
+  log('  voice answer to next plate: ' + quick + ' ms');
+  if (quick > 2000) problems.push('Voice answer too slow: ' + quick + ' ms');
+  await sleep(300); await screenshot('color-plate-3');
+  await say('hello');                     // speech without a number: hint, keeps listening
+  await waitFor(`document.body.innerText.includes("didn't hear a number")`, 'voice not heard');
+  await say('twenty nine');               // interim "twenty" must not be taken as 20
+  await atPlate(4);
+  // Long silence: the browser ends the session; the app restarts it and still hears the answer
+  const startsBefore = await evaluate('window.__fakeStarts');
+  await sleep(5500);
+  const startsAfter = await evaluate('window.__fakeStarts');
+  if (!(startsAfter > startsBefore)) problems.push('Mic was not restarted after silence');
+  await say('five');
+  await atPlate(5);
+  await clickText('Type the number instead');
+  await evaluate(`[...document.querySelectorAll('button')].find(b => b.innerText.trim() === '3').click(), true`);
+  await clickText('OK');
+  await atPlate(6);                       // keypad mode now; turn voice back on
+  await clickText('Say the number');
+  await say('fifteen');
+  await atPlate(7);
+  await say("I can't see anything");      // one miss: no number seen
+  await atPlate(8);
+  await say('six');
+  await atPlate(9); await sleep(300); await screenshot('color-plate-9-classify');
+  await say('26');
+  await atPlate(10); await sleep(300); await screenshot('color-plate-10-classify');
+  await say('42');
+  await atPlate(11); await sleep(300); await screenshot('color-plate-11-tritan');
+  await say('seven');
+  await atPlate(12); await sleep(300); await screenshot('color-plate-12-tritan');
+  await say('forty five');
+
+  // ---------- Colour results ----------
+  await waitPath('/results');
+  await waitFor(`document.body.innerText.includes('Your Results')`, 'colour results');
+  await screenshot('results-color');
+  resText = await bodyText();
+  log('Colour results:\n' + resText.split('\n').filter(Boolean).map(l => '    ' + l).join('\n'));
+  if (resText.includes('Right Eye')) problems.push('Colour results should not show eye cards');
 
   const stored = await evaluate(`localStorage.getItem('drishti_results')`);
   const parsed = JSON.parse(stored || '[]');
   log('Saved results in localStorage:', parsed.length);
-  if (parsed[0]) {
-    const r = parsed[0];
-    log(`  name=${r.childName} age=${r.age} PPI=${r.screenPPI.toFixed(1)} dist=${r.armLengthCM}cm`);
-    log(`  right=${r.rightEye.bestSnellen} (${r.rightEye.passed}) left=${r.leftEye.bestSnellen} (${r.leftEye.passed})`);
-    log(`  color correct=${r.colorVision.responses.filter(x => x.correct).length}/8 passed=${r.colorVision.passed} overall=${r.overallPassed}`);
-    if (r.rightEye.bestSnellen !== '6/6') problems.push('Right eye expected 6/6, got ' + r.rightEye.bestSnellen);
-    if (r.leftEye.bestSnellen !== '6/24') problems.push('Left eye expected 6/24, got ' + r.leftEye.bestSnellen);
-    if (!r.colorVision.passed) problems.push('Color vision expected pass (6/7)');
-  } else problems.push('No result saved to localStorage!');
+  if (parsed.length !== 2) problems.push('Expected 2 saved results, got ' + parsed.length);
+  const [v, c] = parsed;
+  if (v) {
+    log(`  eyesight: name=${v.childName} age=${v.age} PPI=${v.screenPPI.toFixed(1)} dist=${v.armLengthCM}cm mode=${v.testMode}`);
+    log(`  right=${v.rightEye?.bestSnellen} (${v.rightEye?.passed}) left=${v.leftEye?.bestSnellen} (${v.leftEye?.passed}) overall=${v.overallPassed}`);
+    if (v.rightEye?.bestSnellen !== '6/6') problems.push('Right eye expected 6/6, got ' + v.rightEye?.bestSnellen);
+    if (v.leftEye?.bestSnellen !== '6/24') problems.push('Left eye expected 6/24, got ' + v.leftEye?.bestSnellen);
+    if (v.colorVision) problems.push('Eyesight result should not contain a colour result');
+  }
+  if (c) {
+    log(`  colour: age=${c.age} mode=${c.testMode} correct=${c.colorVision?.responses.filter(x => x.correct).length}/12 type=${c.colorVision?.possibleDeficiency} passed=${c.colorVision?.passed} overall=${c.overallPassed}`);
+    if (!c.colorVision?.passed) problems.push('Color vision expected pass (6/7)');
+    if (c.colorVision?.possibleDeficiency !== 'none') problems.push('Expected no colour deficiency, got ' + c.colorVision?.possibleDeficiency);
+    if (c.rightEye || c.leftEye) problems.push('Colour result should not contain eye results');
+  }
 
   // ---------- History ----------
   await clickText('View Past Results');
@@ -220,8 +315,8 @@ async function main() {
 
   // ---------- Hindi smoke test ----------
   await send('Page.navigate', { url: BASE + '/' });
-  await waitFor(`document.body.innerText.includes('Start Eye Test')`, 'home again'); await sleep(2500);
-  await clickText('Start Eye Test');
+  await waitFor(`document.body.innerText.includes('Eyesight Test')`, 'home again'); await sleep(2500);
+  await clickText('Eyesight Test');
   await waitPath('/language');
   await clickText('हिन्दी');
   await waitPath('/name');

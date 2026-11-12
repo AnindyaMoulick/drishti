@@ -33,7 +33,7 @@ export interface EyeResult {
   responses: SymbolResponse[];
   bestLogMAR: number;   // Best acuity achieved
   bestSnellen: string;  // e.g. "6/9"
-  passed: boolean;      // true if logMAR <= 0.2 (6/9.5 or better)
+  passed: boolean;      // true if 6/9 or better
 }
 
 export interface ColorPlate {
@@ -53,10 +53,13 @@ export interface ColorResponse {
   correct: boolean;
 }
 
+/** Likely colour blindness type: protan = red, deutan = green, tritan = blue(-yellow). */
+export type ColorDeficiency = 'none' | 'protan' | 'deutan' | 'tritan' | 'red-green' | 'inconclusive';
+
 export interface ColorTestResult {
   responses: ColorResponse[];
   passed: boolean;       // true if correctly identified enough plates
-  possibleDeficiency: 'none' | 'red-green' | 'inconclusive';
+  possibleDeficiency: ColorDeficiency;
 }
 
 export interface TestResult {
@@ -66,14 +69,20 @@ export interface TestResult {
   language: LanguageCode;
   screenPPI: number;
   armLengthCM: number;
-  rightEye: EyeResult;
-  leftEye: EyeResult;
-  colorVision: ColorTestResult;
+  /** Which test was taken. Results saved before the tests were split have no testMode and contain all three parts. */
+  testMode?: TestMode;
+  rightEye?: EyeResult;       // eyesight test only
+  leftEye?: EyeResult;        // eyesight test only
+  colorVision?: ColorTestResult; // colour blindness test only
   overallPassed: boolean;
   childName?: string;    // Optional
 }
 
+/** The two separate tests offered on the home screen. */
+export type TestMode = 'vision' | 'color';
+
 export interface AppState {
+  testMode: TestMode | null;
   language: LanguageCode | null;
   age: number | null;
   screenPPI: number | null;

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useReducer, ReactNode } from 'react';
-import { AppState, LanguageCode, Eye, EyeResult, ColorTestResult, TestResult } from '@/types';
+import { AppState, LanguageCode, Eye, EyeResult, ColorTestResult, TestResult, TestMode } from '@/types';
 import { saveTestResult, generateId } from '@/lib/storage';
 import { getArmLength } from '@/lib/calibration';
 import { RTL_LANGUAGES } from '@/lib/i18n';
@@ -11,16 +11,19 @@ interface AppContextType {
   state: AppState;
   /** False until state has been restored from sessionStorage (first client render). */
   hydrated: boolean;
+  setTestMode: (mode: TestMode) => void;
   setLanguage: (lang: LanguageCode) => void;
   setAge: (age: number) => void;
   setCalibration: (ppi: number) => void;
   setChildName: (name: string) => void;
   setCurrentEye: (eye: Eye) => void;
-  saveResults: (rightEye: EyeResult, leftEye: EyeResult, colorVision: ColorTestResult) => TestResult;
+  /** Saves whichever parts the chosen test produced. */
+  saveResults: (parts: { rightEye?: EyeResult; leftEye?: EyeResult; colorVision?: ColorTestResult }) => TestResult;
   resetState: () => void;
 }
 
 const initialState: AppState = {
+  testMode: null,
   language: null,
   age: null,
   screenPPI: null,
@@ -30,6 +33,7 @@ const initialState: AppState = {
 };
 
 type Action =
+  | { type: 'SET_TEST_MODE'; payload: TestMode }
   | { type: 'SET_LANGUAGE'; payload: LanguageCode }
   | { type: 'SET_AGE'; payload: number }
   | { type: 'SET_CALIBRATION'; payload: number }
@@ -45,6 +49,8 @@ type ReducerState = AppState & { hydrated: boolean };
 
 function reducer(state: ReducerState, action: Action): ReducerState {
   switch (action.type) {
+    case 'SET_TEST_MODE':
+      return { ...state, testMode: action.payload };
     case 'SET_LANGUAGE':
       return { ...state, language: action.payload };
     case 'SET_AGE':
@@ -100,6 +106,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     } catch { /* storage full or blocked: state still works in memory */ }
   }, [store]);
 
+  const setTestMode = (mode: TestMode) => dispatch({ type: 'SET_TEST_MODE', payload: mode });
   const setLanguage = (lang: LanguageCode) => dispatch({ type: 'SET_LANGUAGE', payload: lang });
   const setAge = (age: number) => dispatch({ type: 'SET_AGE', payload: age });
   const setCalibration = (ppi: number) => dispatch({ type: 'SET_CALIBRATION', payload: ppi });
@@ -107,7 +114,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const setCurrentEye = (eye: Eye) => dispatch({ type: 'SET_CURRENT_EYE', payload: eye });
   const resetState = () => dispatch({ type: 'RESET' });
 
-  const saveResults = (rightEye: EyeResult, leftEye: EyeResult, colorVision: ColorTestResult): TestResult => {
+  const saveResults = ({ rightEye, leftEye, colorVision }: {
+    rightEye?: EyeResult; leftEye?: EyeResult; colorVision?: ColorTestResult;
+  }): TestResult => {
+    const parts = [rightEye, leftEye, colorVision].filter(p => p !== undefined);
     const result: TestResult = {
       id: generateId(),
       timestamp: Date.now(),
@@ -115,10 +125,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
       language: state.language || 'en',
       screenPPI: state.screenPPI || 0,
       armLengthCM: state.armLengthCM || 40,
+      testMode: colorVision ? 'color' : 'vision',
       rightEye,
       leftEye,
       colorVision,
-      overallPassed: rightEye.passed && leftEye.passed && colorVision.passed,
+      overallPassed: parts.length > 0 && parts.every(p => p.passed),
       childName: state.childName,
     };
     saveTestResult(result);
@@ -129,6 +140,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     <AppContext.Provider value={{
       state,
       hydrated,
+      setTestMode,
       setLanguage,
       setAge,
       setCalibration,

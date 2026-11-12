@@ -3,7 +3,9 @@ const en = {
   // Home
   'home.title': 'Drishti',
   'home.subtitle': 'Vision Screening for Children',
-  'home.startTest': 'Start Eye Test',
+  'home.startTest': 'Eyesight Test',
+  'home.colorTest': 'Color Blindness Test',
+  'home.chooseTest': 'Choose a Test',
   'home.viewHistory': 'View Past Results',
   'home.description': 'A simple eye test to check if you need glasses or have color vision issues.',
   
@@ -58,6 +60,11 @@ const en = {
   'color.cantSee': 'I can\'t see a number',
   'color.clear': 'Clear',
   'color.progress': '{current} of {total}',
+  'color.speak': "Say the number",
+  'color.listening': "Listening… say the number",
+  'color.heard': "You said {number}.",
+  'color.notHeard': "Sorry, I didn't hear a number. Try again or use the buttons.",
+  'color.typeInstead': "Type the number instead",
   
   // Results
   'results.title': 'Your Results',
@@ -68,6 +75,12 @@ const en = {
   'results.failed': 'We recommend visiting an eye doctor for a checkup.',
   'results.colorPassed': 'Your color vision appears normal!',
   'results.colorFailed': 'You may have difficulty seeing some colors. Please visit an eye doctor.',
+  'results.cvdType': "Likely type",
+  'results.cvdProtan': "Red color blindness (Protan): red looks dark and is confused with green.",
+  'results.cvdDeutan': "Green color blindness (Deutan): green is confused with red.",
+  'results.cvdTritan': "Blue color blindness (Tritan): blue is confused with green, and yellow with pink.",
+  'results.cvdRedGreen': "Red-green color blindness (exact type not clear).",
+  'results.cvdUnclear': "The result is not clear. Please repeat the test.",
   'results.newTest': 'Take Another Test',
   'results.home': 'Go Home',
   'results.normal': 'Normal',

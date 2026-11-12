@@ -4,14 +4,16 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { t } from '@/lib/i18n';
+import { TestMode } from '@/types';
 
 export default function HomePage() {
   const router = useRouter();
-  const { state, resetState } = useApp();
+  const { state, resetState, setTestMode } = useApp();
   const lang = state.language || 'en';
 
-  const handleStartTest = () => {
+  const handleStartTest = (mode: TestMode) => {
     resetState();
+    setTestMode(mode);
     router.push('/language');
   };
 
@@ -41,12 +43,25 @@ export default function HomePage() {
 
       {/* Buttons */}
       <div className="w-full max-w-xs space-y-4">
+        <p className="text-center text-sm font-medium text-slate-500">{t('home.chooseTest', lang)}</p>
         <button
-          onClick={handleStartTest}
-          className="w-full py-5 px-8 bg-indigo-500 text-white rounded-2xl text-xl font-semibold
-            shadow-lg shadow-indigo-200 hover:bg-indigo-600 active:scale-95 transition-all duration-200"
+          onClick={() => handleStartTest('vision')}
+          className="w-full py-5 px-6 bg-indigo-500 text-white rounded-2xl text-xl font-semibold
+            shadow-lg shadow-indigo-200 hover:bg-indigo-600 active:scale-95 transition-all duration-200
+            flex items-center justify-center gap-3"
         >
-          {t('home.startTest', lang)}
+          <span aria-hidden="true">👁️</span>
+          <span>{t('home.startTest', lang)}</span>
+        </button>
+
+        <button
+          onClick={() => handleStartTest('color')}
+          className="w-full py-5 px-6 bg-purple-500 text-white rounded-2xl text-xl font-semibold
+            shadow-lg shadow-purple-200 hover:bg-purple-600 active:scale-95 transition-all duration-200
+            flex items-center justify-center gap-3"
+        >
+          <span aria-hidden="true">🎨</span>
+          <span>{t('home.colorTest', lang)}</span>
         </button>
         
         <button

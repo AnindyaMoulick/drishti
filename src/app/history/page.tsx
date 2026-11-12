@@ -121,22 +121,28 @@ export default function HistoryPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className={`p-2 rounded-lg ${result.rightEye.passed ? 'bg-emerald-50' : 'bg-amber-50'}`}>
-                    <p className="text-slate-400">{t('results.rightEye', lang)}</p>
-                    <p className="font-semibold">{result.rightEye.bestSnellen}</p>
-                    <p>{result.rightEye.passed ? '✅' : '⚠️'}</p>
-                  </div>
-                  <div className={`p-2 rounded-lg ${result.leftEye.passed ? 'bg-emerald-50' : 'bg-amber-50'}`}>
-                    <p className="text-slate-400">{t('results.leftEye', lang)}</p>
-                    <p className="font-semibold">{result.leftEye.bestSnellen}</p>
-                    <p>{result.leftEye.passed ? '✅' : '⚠️'}</p>
-                  </div>
-                  <div className={`p-2 rounded-lg ${result.colorVision.passed ? 'bg-emerald-50' : 'bg-amber-50'}`}>
-                    <p className="text-slate-400">{t('history.color', lang)}</p>
-                    <p className="font-semibold">{result.colorVision.passed ? t('results.normal', lang) : t('history.check', lang)}</p>
-                    <p>{result.colorVision.passed ? '✅' : '⚠️'}</p>
-                  </div>
+                <div className="flex gap-2 text-center text-xs">
+                  {result.rightEye && (
+                    <div className={`flex-1 p-2 rounded-lg ${result.rightEye.passed ? 'bg-emerald-50' : 'bg-amber-50'}`}>
+                      <p className="text-slate-400">{t('results.rightEye', lang)}</p>
+                      <p className="font-semibold">{result.rightEye.bestSnellen}</p>
+                      <p>{result.rightEye.passed ? '✅' : '⚠️'}</p>
+                    </div>
+                  )}
+                  {result.leftEye && (
+                    <div className={`flex-1 p-2 rounded-lg ${result.leftEye.passed ? 'bg-emerald-50' : 'bg-amber-50'}`}>
+                      <p className="text-slate-400">{t('results.leftEye', lang)}</p>
+                      <p className="font-semibold">{result.leftEye.bestSnellen}</p>
+                      <p>{result.leftEye.passed ? '✅' : '⚠️'}</p>
+                    </div>
+                  )}
+                  {result.colorVision && (
+                    <div className={`flex-1 p-2 rounded-lg ${result.colorVision.passed ? 'bg-emerald-50' : 'bg-amber-50'}`}>
+                      <p className="text-slate-400">{t('history.color', lang)}</p>
+                      <p className="font-semibold">{result.colorVision.passed ? t('results.normal', lang) : t('history.check', lang)}</p>
+                      <p>{result.colorVision.passed ? '✅' : '⚠️'}</p>
+                    </div>
+                  )}
                 </div>
 
                 <button

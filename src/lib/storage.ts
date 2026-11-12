@@ -1,4 +1,5 @@
-import { TestResult } from '@/types';
+import { TestResult, EyeResult } from '@/types';
+import { DEFICIENCY_NAME } from '@/lib/colorScoring';
 
 const STORAGE_KEY = 'drishti_results';
 
@@ -63,7 +64,7 @@ export function exportResults(): void {
 export function exportResultsCSV(): void {
   const results = getTestResults();
   const header = [
-    'Date', 'Name', 'Age', 'Language',
+    'Date', 'Name', 'Age', 'Language', 'Test',
     'Right Eye (Snellen)', 'Right Eye (LogMAR)', 'Right Eye Result',
     'Left Eye (Snellen)', 'Left Eye (LogMAR)', 'Left Eye Result',
     'Color Plates Correct', 'Color Vision Result', 'Overall', 'Screen PPI', 'Distance (cm)',
@@ -72,20 +73,25 @@ export function exportResultsCSV(): void {
     const s = String(v);
     return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
+  // Each test leaves the other test's columns blank.
+  const eye = (e?: EyeResult) => e ? [e.bestSnellen, e.bestLogMAR, e.passed ? 'Pass' : 'Refer'] : ['', '', ''];
   const rows = results.map(r => {
-    const colorCorrect = r.colorVision.responses.filter(x => x.correct).length;
+    const cv = r.colorVision;
+    const hasEyes = !!(r.rightEye || r.leftEye);
+    const test = hasEyes && cv ? 'Eyesight + Colour' : cv ? 'Colour blindness' : 'Eyesight';
     return [
       new Date(r.timestamp).toLocaleString('en-IN'),
       r.childName || '',
       r.age,
       r.language,
-      r.rightEye.bestSnellen, r.rightEye.bestLogMAR, r.rightEye.passed ? 'Pass' : 'Refer',
-      r.leftEye.bestSnellen, r.leftEye.bestLogMAR, r.leftEye.passed ? 'Pass' : 'Refer',
-      `${colorCorrect}/${r.colorVision.responses.length}`,
-      r.colorVision.passed ? 'Normal' : r.colorVision.possibleDeficiency,
+      test,
+      ...eye(r.rightEye),
+      ...eye(r.leftEye),
+      cv ? `${cv.responses.filter(x => x.correct).length}/${cv.responses.length}` : '',
+      cv ? (cv.passed ? 'Normal' : DEFICIENCY_NAME[cv.possibleDeficiency] ?? cv.possibleDeficiency) : '',
       r.overallPassed ? 'Pass' : 'Refer to eye doctor',
-      Math.round(r.screenPPI),
-      r.armLengthCM,
+      hasEyes ? Math.round(r.screenPPI) : '',
+      hasEyes ? r.armLengthCM : '',
     ].map(escape).join(',');
   });
   // BOM so Excel reads Indian-script names correctly

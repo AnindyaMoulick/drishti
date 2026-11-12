@@ -39,19 +39,16 @@ export const ARM_LENGTH_BY_AGE: Record<number, number> = {
   14: 54,
 };
 
-// LogMAR acuity levels (WHO standard)
-// Symbol sizes are computed for the actual viewing distance in calibration.ts
+// The 7 lines of the standard Snellen school chart (6/60 down to 6/6).
+// logMAR = log10(denominator / 6). Symbol sizes are computed for the actual
+// viewing distance in calibration.ts.
 export const ACUITY_LEVELS: AcuityLevel[] = [
   { logMAR: 1.0, snellen: '6/60' },
-  { logMAR: 0.9, snellen: '6/48' },
-  { logMAR: 0.8, snellen: '6/38' },
-  { logMAR: 0.7, snellen: '6/30' },
+  { logMAR: 0.78, snellen: '6/36' },
   { logMAR: 0.6, snellen: '6/24' },
-  { logMAR: 0.5, snellen: '6/19' },
-  { logMAR: 0.4, snellen: '6/15' },
+  { logMAR: 0.48, snellen: '6/18' },
   { logMAR: 0.3, snellen: '6/12' },
-  { logMAR: 0.2, snellen: '6/9.5' },
-  { logMAR: 0.1, snellen: '6/7.5' },
+  { logMAR: 0.18, snellen: '6/9' },
   { logMAR: 0.0, snellen: '6/6' },
 ];
 
@@ -68,10 +65,10 @@ export const SYMBOLS_PER_LEVEL = 3;
 export const PASS_THRESHOLD = 2;
 
 // Visual acuity pass threshold (LogMAR <= this is considered pass)
-export const ACUITY_PASS_LOGMAR = 0.2; // 6/9.5
+export const ACUITY_PASS_LOGMAR = 0.2; // 6/9 (logMAR 0.18) or better passes
 
 // Color vision test: minimum plates correct to pass
-export const COLOR_PASS_THRESHOLD = 5; // out of 7 non-demo plates
+export const COLOR_PASS_THRESHOLD = 5; // out of the 7 red-green screening plates
 
 // All LEA symbols
 export const LEA_SYMBOLS = ['house', 'circle', 'square', 'apple'] as const;

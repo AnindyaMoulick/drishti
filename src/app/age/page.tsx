@@ -16,7 +16,8 @@ export default function AgePage() {
   const handleNext = () => {
     if (selectedAge !== null) {
       setAge(selectedAge);
-      router.push('/calibrate');
+      // The colour test needs no screen calibration or viewing distance.
+      router.push(state.testMode === 'color' ? '/test/color' : '/calibrate');
     }
   };
 
